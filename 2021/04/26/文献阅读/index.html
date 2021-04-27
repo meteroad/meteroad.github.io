@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="bisOOpM5GzhCJLvNLCTfO9MH-oLCW2iCoogRuU5yOVc">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.liuxinlu.xyz","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12,"onmobile":true,"dimmer":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="多稳态忆阻及其在神经网络中的应用A Multi-Stable Memristor and Its Application in a Neural NetworkIEEE TRANSACTIONS ON CIRCUITS AND SYSTEMShttps:&#x2F;&#x2F;maiimg.com&#x2F;pdf&#x2F;?e&#x3D;agFURqFOchWOQm (该链接仅供学习用途) 一、摘要&amp;emsp;&amp;emsp;目前，关于基于忆阻的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多稳态忆阻及其在神经网络中的应用（及两篇引文）">
+<meta property="og:url" content="http://www.liuxinlu.xyz/2021/04/26/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/index.html">
+<meta property="og:site_name" content="大步的Blog">
+<meta property="og:description" content="多稳态忆阻及其在神经网络中的应用A Multi-Stable Memristor and Its Application in a Neural NetworkIEEE TRANSACTIONS ON CIRCUITS AND SYSTEMShttps:&#x2F;&#x2F;maiimg.com&#x2F;pdf&#x2F;?e&#x3D;agFURqFOchWOQm (该链接仅供学习用途) 一、摘要&amp;emsp;&amp;emsp;目前，关于基于忆阻的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpxckma8bzj30es03ut8t.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpxcli5cm4j30lk03hglw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpxanoh6dfj309u01h0sl.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gpxayr34rcj30k701daa0.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxauzfamcj30mv0afwjt.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpxc4zatpdj30gg0cr0xl.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpx6m4x5pfj30jc03agln.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx65stf7sj30fw0bfdia.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpx6k99xd9j30lm06b750.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx694zu95j30wu0chtin.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpx76pz7vqj30lp07kadj.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpx7ktw1f3j30u20ddqf6.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpx7peluwxj30v00dyn2m.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxgq109ebj30i30gugrk.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxgvdultvj30jj05574k.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpxgy06ghrj30pk068wf9.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/005Au8gjly1gpxhl4i2gaj30t20jawlf.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/mw690/005Au8gjly1gpxh2ywofuj312h0g5q52.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpxi3n1kg3j311t16ye82.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpxibpx1raj313h0cjn5b.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpy1t1ud7ij30ze16eb29.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gpy21no1shj314g0d0gs7.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/mw690/005Au8gjly1gpy25byd0fj30rt149e81.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpy2czj93nj310f0hb46a.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpy2fms9ofj30wt12mu0x.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpy2hhkbb7j30zb0b8jym.jpg">
+<meta property="article:published_time" content="2021-04-26T08:36:00.000Z">
+<meta property="article:modified_time" content="2021-04-27T11:59:38.582Z">
+<meta property="article:author" content="大步">
+<meta property="article:tag" content="神经网络">
+<meta property="article:tag" content="忆阻">
+<meta property="article:tag" content="多稳态">
+<meta property="article:tag" content="文献阅读">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpxckma8bzj30es03ut8t.jpg">
+
+<link rel="canonical" href="http://www.liuxinlu.xyz/2021/04/26/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>多稳态忆阻及其在神经网络中的应用（及两篇引文） | 大步的Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="大步的Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">大步的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-音乐">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>音乐</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/meteroad" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.liuxinlu.xyz/2021/04/26/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://tva4.sinaimg.cn/large/0083jUChgy1gn27jyfhz2j30c90beglr.jpg">
+      <meta itemprop="name" content="大步">
+      <meta itemprop="description" content="有关学习，音乐">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大步的Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          多稳态忆阻及其在神经网络中的应用（及两篇引文）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-26 16:36:00" itemprop="dateCreated datePublished" datetime="2021-04-26T16:36:00+08:00">2021-04-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-27 19:59:38" itemprop="dateModified" datetime="2021-04-27T19:59:38+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">毕业设计</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/04/26/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/26/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="多稳态忆阻及其在神经网络中的应用"><a href="#多稳态忆阻及其在神经网络中的应用" class="headerlink" title="多稳态忆阻及其在神经网络中的应用"></a>多稳态忆阻及其在神经网络中的应用</h1><p>A Multi-Stable Memristor and Its Application in a Neural Network<br>IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS<br><a target="_blank" rel="noopener" href="https://maiimg.com/pdf/?e=agFURqFOchWOQm">https://maiimg.com/pdf/?e=agFURqFOchWOQm</a> (该链接仅供学习用途)</p>
+<h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>&emsp;&emsp;目前，关于基于忆阻的<em>多稳态系统</em>有很多研究。然而，目前还没有关于多稳态忆阻的研究。本文建立了一个具有多稳态的忆阻数学模型。<span id="more"></span>利用标准非线性理论以及电路和系统理论揭示了多稳态动力学的起源。此外，利用多稳态记忆电阻器模拟Hopfield神经网络中的突触连接。忆阻神经网络成功地产生了<strong>无穷多个共存的混沌吸引子</strong>，这在以前传统的hopfield神经网络中是没有发现的。这一结果也在基于商用电子元件的模拟电路中得到证实。</p>
+<h2 id="二、intro"><a href="#二、intro" class="headerlink" title="二、intro"></a>二、intro</h2><p>略</p>
+<h2 id="三、多稳态模型"><a href="#三、多稳态模型" class="headerlink" title="三、多稳态模型"></a>三、多稳态模型</h2><p>根据忆阻器理论，压控通用忆阻器模型可以定义为<br>欧姆定律：</p>
+<script type="math/tex; mode=display">i = G(x)v</script><p>状态方程：</p>
+<script type="math/tex; mode=display">dx/dt=g(x,v)</script><p>式中$G(x)$为memductance（忆感）, $v, i, x$分别为电压, 电流，忆阻状态。基于上面两个式子，提出了一个通用的忆阻模型，即</p>
+<div align='center'>
+
+![image](https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxccm0wpzj30b302gq2w.jpg)
+
+</div>
+
+<p>在忆阻外部加一个正弦激励：</p>
+<script type="math/tex; mode=display">V=AsinFt</script><p>再将状态方程积分可得：<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpxckma8bzj30es03ut8t.jpg" alt="image"></p>
+<p>带入欧姆方程可得：</p>
+<center>
+
+<p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpxcli5cm4j30lk03hglw.jpg" alt="image"></p>
+<p>&lt;/center&gt;<br>很显然是由一个基频和谐波分量组成。</p>
+<h3 id="伏安特性"><a href="#伏安特性" class="headerlink" title="伏安特性"></a>伏安特性</h3><p>磁滞回路图，前一个图是振幅A变化的时候，回路图的变化。后一个图是F变化的时候的回路图，F越大越接近纯直线。</p>
+<div align='center'>
+
+![image](https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpx9cbqojfj30nb0b2dis.jpg)
+
+</div>
+
+<h3 id="多稳态特性"><a href="#多稳态特性" class="headerlink" title="多稳态特性"></a>多稳态特性</h3><p>令v=0，忆阻的状态方程就化为了如下：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpxanoh6dfj309u01h0sl.jpg" alt="image"></p>
+<p>多稳态忆阻器的POP，其中k为偶数。（本文利用激励中断图(POP)来揭示忆阻器的多重稳定性），具体原理不用知道，只需要知道奇稳定，偶不稳定即可。</p>
+<div align='center'>
+
+![image](https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpx9xzex6oj30hj0e5jw2.jpg)
+
+</div>
+
+<p>下图是不同初始态下忆阻多稳态向不同稳态的时间演化。</p>
+<div align='center'>
+
+![image](https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpx9z0drahj30hy0dn7a7.jpg)
+
+</div>
+
+<p>此图可以印证上图的正确性。当k为偶数时，平衡点是不稳定的，而平衡点$S<em>{k+1}$是稳定的。因此，对于初态$x_0∈(kπ， (k + 2)π)$，忆阻态趋向于稳定平衡点$x(S</em>{k+1})$，即</p>
+<p><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gpxayr34rcj30k701daa0.jpg" alt="image"><br>上式直接说明了两个重要的结果:<br>(i)对于不同的初始状态，k值不同，多稳态忆阻器的动力学轨迹会趋向不同的稳定平衡点，即多稳态。<br>(ii)对于具有相同k的不同初始态，多稳态忆阻器的动态轨迹将趋于相同的稳定平衡点，即可调性。</p>
+<p>下图是多稳态忆阻器不同初始状态下$x_0$=−7π、−5π、−3π、−1π、1π、3π、5π和7π的数值模拟结果。(a)Memductances (b)共存的收缩磁滞回线<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxauzfamcj30mv0afwjt.jpg" alt="image"><br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpxc4zatpdj30gg0cr0xl.jpg" alt="image"><br>由图可知，对于不同的初始状态范围$x_0∈(kπ， (k + 2)π)$，其中$k$为任意偶数，多稳态忆阻器可以同时产生无穷多个磁滞环。表明忆阻在直流电激励下表现出多种稳定状态的行为。</p>
+<h2 id="四、Hopfield"><a href="#四、Hopfield" class="headerlink" title="四、Hopfield"></a>四、Hopfield</h2><p>Hopfield神经网络的节点电流方程如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpx6m4x5pfj30jc03agln.jpg" alt="image"></p>
+<p>忆阻神经网络的拓扑结构图：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx65stf7sj30fw0bfdia.jpg" alt="image"></p>
+<p>令$C<em>i=1,R_i=1,I_i=0$,该带忆阻神经网络的方程如下：<br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpx6k99xd9j30lm06b750.jpg" alt="image"><br>其中$G=z$ 代表 $\omega</em>{41}$ ，$\rho$ 代表耦合强度。当神经网络的所有权值都为0的时候，有无数个离散平衡点。</p>
+<p>分岔图和Lyapunov指数图，其中$\rho$的变化范围是从0-5，节点的初始状态为$(1,1,1,1,1)$。可以看出当 $\rho&gt;2.8$的时候，神经网络进入稳定混沌状态。<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx694zu95j30wu0chtin.jpg" alt="image"><br>Lyapunov指数 $\lambda$ 表示相空间相邻轨迹的平均指数发散率的数值特征。又称李雅普诺夫特征指数，是用于识别混沌运动若干数值的特征之一？？。</p>
+<p>下图分别表示当$\rho=0.7,1.5,2.2,4$的时候的数值仿真相图，也就是吸引子的图，由下图可以看出当$\rho=4$的时候将不是周期性的吸引子而是混沌吸引子。<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpx76pz7vqj30lp07kadj.jpg" alt="image"></p>
+<p>在多稳态忆阻耦合强度$\rho=4$固定的情况下，记忆神经网络可以在不同初始状态下产生无穷多个共存的混沌吸引子。以下是改变$z_0$的情况下，产生的混沌吸引子对比图和zmax图，Lyapunov指数图。<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpx7ktw1f3j30u20ddqf6.jpg" alt="image"></p>
+<p>下图直接展示了两个重要的现象:</p>
+<p>(i)忆阻神经网络随着 $z_0$ 的增大产生了无限多个不同位置的混沌吸引子;</p>
+<p>(ii)每个吸引子都有一个独立的初始状态范围 $z_0∈(kπ，(k + 2)π)$，其中k为偶数。<br>显然，每个吸引子的位置和初始状态都是可调的。这意味着该神经网络中的多稳态动力学是可控的。</p>
+<p><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpx7peluwxj30v00dyn2m.jpg" alt="image"></p>
+<h2 id="五、创新点"><a href="#五、创新点" class="headerlink" title="五、创新点"></a>五、创新点</h2><ol>
+<li>设计了多稳态忆阻。</li>
+</ol>
+<h1 id="基于忆阻的Hopfield神经网络中的嵌合现象"><a href="#基于忆阻的Hopfield神经网络中的嵌合现象" class="headerlink" title="基于忆阻的Hopfield神经网络中的嵌合现象"></a>基于忆阻的Hopfield神经网络中的嵌合现象</h1><p>Dynamic behaviors of hyperbolic-type memristor-based Hopfield neural network considering synaptic crosstalk<br>The European Physical Journal Special Topics<br><a target="_blank" rel="noopener" href="https://maiimg.com/pdf/?e=agdq/JHoVhyVkm">https://maiimg.com/pdf/?e=agdq/JHoVhyVkm</a> （该链接仅供学习用途）</p>
+<h2 id="一、摘要-1"><a href="#一、摘要-1" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>忆阻器在各个领域显示出巨大的潜力，可以产生新的特性。因此，基于记忆电阻的系统正在得到广泛的应用研究。本文研究了一种新的基于记忆电阻的双曲型Hopfield神经网络，作为耦合网络的单个单元。特别地，研究了系统各状态变量之间的耦合对网络行为的影响。结果表明，在不同的耦合强度下，耦合变量的变化会产生不同的模式，包括部分嵌合态、嵌合态、同步、不完全同步和振荡死亡。当基于记忆电阻的元件相互耦合时，增加耦合强度会导致从异步状态到嵌合体状态的规律性转变，然后再向同步状态转变。</p>
+<h2 id="二、intro-1"><a href="#二、intro-1" class="headerlink" title="二、intro"></a>二、intro</h2><p>同步态<br>嵌合状态：同步的一个非常特殊的现象，结合相干和非相干两种状态的混合状态可以自发地出现<br>部分嵌合状态<br>振荡死亡态：在一定条件下，整个耦合振子系统可以停止振荡并转移到一个全局非均匀的定态（即所谓的振荡死亡态）。</p>
+<h2 id="三、建模"><a href="#三、建模" class="headerlink" title="三、建模"></a>三、建模</h2><p>忆阻HNN的拓扑结构如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxgq109ebj30i30gugrk.jpg" alt="image"></p>
+<p>连接矩阵如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxgvdultvj30jj05574k.jpg" alt="image"></p>
+<p>基于忆阻的HNN的常微分方程(ode)为:<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpxgy06ghrj30pk068wf9.jpg" alt="image"></p>
+<p>其中，突触权重$w_{13}$定义为 $kW = k(a−b tanh(x_4))$ ， $k$为三个神经元的耦合强度。通过对$a、b、k$的参数选择不同的值，系统可以表现出不同的共存极限环吸引子和奇异吸引子，其中部分如下图所示。<br><img src="https://tva2.sinaimg.cn/large/005Au8gjly1gpxhl4i2gaj30t20jawlf.jpg" alt="image"><br>其中a、b图里，蓝色为吸引子，红色为极限环，c图均为吸引子，d图蓝色为极限环，红色为定点。</p>
+<p>a) $a = 1,b=0.41,k=0.8$，可知此时有两个吸引区域。</p>
+<p>各变量间耦合的网络方程为:<br><img src="https://tva4.sinaimg.cn/mw690/005Au8gjly1gpxh2ywofuj312h0g5q52.jpg" alt="image"></p>
+<p>其中 $[\dot{x}<em>{1i},\dot{x}</em>{2i},\dot{x}<em>{3i},\dot{x}</em>{4i}]$ 表示第i个单元的状态变量。每个基于记忆电阻的HNN节点对称地耦合到其最近的2P个节点。d1，…， d4为耦合强度。</p>
+<h2 id="四、仿真与结果"><a href="#四、仿真与结果" class="headerlink" title="四、仿真与结果"></a>四、仿真与结果</h2><p>系统参数固定为$a = 1,b=0.41,k=0.8$。由上图每个单元都有一个极限环和一个混沌吸引子共存。在构建网络时，N=100个HNN被耦合，P=30。在所有的模拟中，初始条件是从两个吸引盆地（这个翻译比较形象）中随机选择的。</p>
+<h3 id="x-1-状态变量耦合"><a href="#x-1-状态变量耦合" class="headerlink" title="$x_1$状态变量耦合"></a>$x_1$状态变量耦合</h3><p>首先设置$x_1$状态变量之间的耦合(即d2=d3=d4=0)，通过增加耦合强度d1，网络的数值模拟如下图所示。</p>
+<p><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpxi3n1kg3j311t16ye82.jpg" alt="image"></p>
+<p>由上图，当耦合强度较小时，网络动态是完全不相干的。左图是100个HNN网络的时空模式图，右图是极限环。</p>
+<pre><code>(a) d1= 0.01时的异步性
+(b) d1= 0.05时的异步性
+(c) d1= 0.1时的部分嵌合状态
+(d) d1= 0.5时的部分嵌合状态
+</code></pre><p><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpxibpx1raj313h0cjn5b.jpg" alt="image"><br>上图是完全对应于图三的某个时间节点的快照。 ？</p>
+<h3 id="x-2-状态变量耦合"><a href="#x-2-状态变量耦合" class="headerlink" title="$x_2$状态变量耦合"></a>$x_2$状态变量耦合</h3><p>设置$x_2$状态变量之间的耦合(即d1=d3=d4=0)，通过增加耦合强度d2，网络的数值模拟如下图所示。</p>
+<p><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpy1t1ud7ij30ze16eb29.jpg" alt="image"></p>
+<p>由图，当耦合强度较小时，网络完全同步。如果提高耦合强度，所有振子都会被不动点吸引，模式是非相干振荡死亡。纯色是非相干振荡死亡，条纹是相干震荡。</p>
+<pre><code>(a)d2 = 0.01时同步
+(b)d2 = 0.1时相干振荡死亡和非相干振荡共存
+(c)d2 = 0.3时部分嵌合状态
+(d)d2 = 0.8时非相干振荡死亡。
+</code></pre><p><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gpy21no1shj314g0d0gs7.jpg" alt="image"></p>
+<h3 id="x-3-状态变量耦合"><a href="#x-3-状态变量耦合" class="headerlink" title="$x_3$状态变量耦合"></a>$x_3$状态变量耦合</h3><p>设置$x_3$状态变量之间的耦合，增加耦合强度d3，网络的数值模拟如下图所示。</p>
+<p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjly1gpy25byd0fj30rt149e81.jpg" alt="image"></p>
+<pre><code>(a)d3 = 0.005时的不同步
+(b)d3 = 0.01时的嵌合状态
+(c)d3 = 0.1时的嵌合状态
+(d)d3 = 0.2时的不完全同步
+(e)d3 = 0.3时的同步
+</code></pre><p><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpy2czj93nj310f0hb46a.jpg" alt="image"></p>
+<h3 id="x-4-状态变量耦合"><a href="#x-4-状态变量耦合" class="headerlink" title="$x_4$状态变量耦合"></a>$x_4$状态变量耦合</h3><p>设置$x_4$状态变量之间的耦合，增加耦合强度d4，网络的数值模拟如下图所示。<br>观察到网络对于耦合强度d4的<strong>所有值都是异步的</strong>，并且没有出现同步或嵌合状态.</p>
+<p><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpy2fms9ofj30wt12mu0x.jpg" alt="image"></p>
+<p>(a) d4= 0.1<br>(b) d4= 0.3<br>(c) d4= 0.5<br>(d) d4= 0.8</p>
+<p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpy2hhkbb7j30zb0b8jym.jpg" alt="image"></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>当$x_1$为耦合变量时，通过增加耦合强度出现异步和部分嵌合状态。<br>当耦合变量变为$x_2$时，网络对于小耦合强度是同步的，通过提高耦合强度，振子的吸引子从极限环转换为不动点。首先，观察到相干振荡死亡区和非相干振荡共存。然后非相干振荡变成相干的，最后在高耦合强度下，所有的吸引子都是不动点，并且观察到振荡死亡状态。<br>当耦合变量变为包含忆阻器的$x_3$时，耦合强度的增加导致从异步状态到嵌合状态的转变，然后到不完全同步，最后完全同步。<br>$x_4$为耦合变量时，网络只是表现出异步振荡。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag"># 神经网络</a>
+              <a href="/tags/%E5%BF%86%E9%98%BB/" rel="tag"># 忆阻</a>
+              <a href="/tags/%E5%A4%9A%E7%A8%B3%E6%80%81/" rel="tag"># 多稳态</a>
+              <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" rel="tag"># 文献阅读</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/02/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" rel="prev" title="leetcode刷题笔记——寻找两个正序数的中位数">
+      <i class="fa fa-chevron-left"></i> leetcode刷题笔记——寻找两个正序数的中位数
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/29/%E4%BA%BA%E5%A3%B0%E6%B7%B7%E5%A3%B0%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/" rel="next" title="人声混声踩坑指南（刚开坑）">
+      人声混声踩坑指南（刚开坑） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%A8%B3%E6%80%81%E5%BF%86%E9%98%BB%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">多稳态忆阻及其在神经网络中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%91%98%E8%A6%81"><span class="nav-text">一、摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81intro"><span class="nav-text">二、intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A4%9A%E7%A8%B3%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="nav-text">三、多稳态模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7"><span class="nav-text">伏安特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%A8%B3%E6%80%81%E7%89%B9%E6%80%A7"><span class="nav-text">多稳态特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Hopfield"><span class="nav-text">四、Hopfield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%88%9B%E6%96%B0%E7%82%B9"><span class="nav-text">五、创新点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%BF%86%E9%98%BB%E7%9A%84Hopfield%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%B5%8C%E5%90%88%E7%8E%B0%E8%B1%A1"><span class="nav-text">基于忆阻的Hopfield神经网络中的嵌合现象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%91%98%E8%A6%81-1"><span class="nav-text">一、摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81intro-1"><span class="nav-text">二、intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BB%BA%E6%A8%A1"><span class="nav-text">三、建模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BB%BF%E7%9C%9F%E4%B8%8E%E7%BB%93%E6%9E%9C"><span class="nav-text">四、仿真与结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#x-1-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_1$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-2-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_2$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-3-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_3$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-4-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_4$状态变量耦合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-text">结论</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="大步"
+      src="https://tva4.sinaimg.cn/large/0083jUChgy1gn27jyfhz2j30c90beglr.jpg">
+  <p class="site-author-name" itemprop="name">大步</p>
+  <div class="site-description" itemprop="description">有关学习，音乐</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+	  
+		<!-- 音乐播放器 -->
+		<div>
+		
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=0&id=5308061913&auto=1&height=66"></iframe>
+		
+		</div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiuXinlu</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>-->
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'fhdG2W348sLnVzs0uNB5CGgH-gzGzoHsz',
+      appKey     : 'CSBDrel3RcO2inlqlWH1YrMk',
+      placeholder: "有意见欢迎指出噢ヾ≧∀≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
