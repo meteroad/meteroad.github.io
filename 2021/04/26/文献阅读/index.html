@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpy2fms9ofj30wt12mu0x.jpg">
 <meta property="og:image" content="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpy2hhkbb7j30zb0b8jym.jpg">
 <meta property="article:published_time" content="2021-04-26T08:36:00.000Z">
-<meta property="article:modified_time" content="2021-04-27T18:59:33.118Z">
+<meta property="article:modified_time" content="2021-04-28T10:26:18.707Z">
 <meta property="article:author" content="大步">
 <meta property="article:tag" content="神经网络">
 <meta property="article:tag" content="忆阻">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-28 02:59:33" itemprop="dateModified" datetime="2021-04-28T02:59:33+08:00">2021-04-28</time>
+                <time title="修改时间：2021-04-28 18:26:18" itemprop="dateModified" datetime="2021-04-28T18:26:18+08:00">2021-04-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,28 +297,30 @@
 <p>此图可以印证上图的正确性。当k为偶数时，平衡点是不稳定的，而平衡点$S<em>{k+1}$是稳定的。因此，对于初态$x_0∈(kπ， (k + 2)π)$，忆阻态趋向于稳定平衡点$x(S</em>{k+1})$，即</p>
 <p><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gpxayr34rcj30k701daa0.jpg" alt=""><br>上式直接说明了两个重要的结果:<br>(i)对于不同的初始状态，k值不同，多稳态忆阻器的动力学轨迹会趋向不同的稳定平衡点，即多稳态。<br>(ii)对于具有相同k的不同初始态，多稳态忆阻器的动态轨迹将趋于相同的稳定平衡点，即可调性。</p>
 <p>下图是多稳态忆阻器不同初始状态下$x_0$=−7π、−5π、−3π、−1π、1π、3π、5π和7π的数值模拟结果。(a)Memductances (b)共存的收缩磁滞回线<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxauzfamcj30mv0afwjt.jpg" alt=""><br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpxc4zatpdj30gg0cr0xl.jpg" alt=""><br>由图可知，对于不同的初始状态范围$x_0∈(kπ， (k + 2)π)$，其中$k$为任意偶数，多稳态忆阻器可以同时产生无穷多个磁滞环。表明忆阻在直流电激励下表现出多种稳定状态的行为。</p>
-<h2 id="四、Hopfield"><a href="#四、Hopfield" class="headerlink" title="四、Hopfield"></a>四、Hopfield</h2><p>Hopfield神经网络的节点电流方程如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpx6m4x5pfj30jc03agln.jpg" alt=""></p>
+<h2 id="四、Hopfield"><a href="#四、Hopfield" class="headerlink" title="四、Hopfield"></a>四、Hopfield</h2><p>Hopfield神经网络的节点电流方程如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpx6m4x5pfj30jc03agln.jpg" alt=""><br>注： $w_{ij}$ 的单位为西门子。</p>
 <p>忆阻神经网络的拓扑结构图：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx65stf7sj30fw0bfdia.jpg" alt=""></p>
 <p>令$C<em>i=1,R_i=1,I_i=0$,该带忆阻神经网络的方程如下：<br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpx6k99xd9j30lm06b750.jpg" alt=""><br>其中$G=z$ 代表 $\omega</em>{41}$ ，$\rho$ 代表耦合强度。当神经网络的所有权值都为0的时候，有无数个离散平衡点。</p>
-<p>分岔图和Lyapunov指数图，其中$\rho$的变化范围是从0-5，节点的初始状态为$(1,1,1,1,1)$。可以看出当 $\rho&gt;2.8$的时候，神经网络进入稳定混沌状态。<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx694zu95j30wu0chtin.jpg" alt=""><br>Lyapunov指数 $\lambda$ 表示相空间相邻轨迹的平均指数发散率的数值特征。又称李雅普诺夫特征指数，是用于识别混沌运动若干数值的特征之一。</p>
+<p>分岔图和Lyapunov指数图，其中$\rho$的变化范围是从0-5，节点的初始状态为$(1,1,1,1,1)$。可以看出当 $\rho&gt;2.8$的时候，神经网络进入稳定混沌状态。<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx694zu95j30wu0chtin.jpg" alt=""><br>Lyapunov指数，混沌系统的基本特点就是系统对初始值的极端敏感性，两个相差无几的初值所产生的轨迹，随着时间的推移按指数方式分离，lyapunov指数就是定量的描述这一现象的量。Lyapunov指数是衡量系统动力学特性的一个重要定量指标,它表征了系统在相空间中相邻轨道间收敛或发散的平均指数率。<strong>对于系统是否存在动力学混沌, 可以从最大Lyapunov指数是否大于零非常直观的判断出来</strong>: 一个正的Lyapunov指数,意味着在系统相空间中,无论初始两条轨线的间距多么小,其差别都会随着时间的演化而成指数率的增加以致达到无法预测,这就是混沌现象。</p>
 <p>下图分别表示当$\rho=0.7,1.5,2.2,4$的时候的数值仿真相图，也就是吸引子的图，由下图可以看出当$\rho=4$的时候将不是周期性的吸引子而是混沌吸引子。<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpx76pz7vqj30lp07kadj.jpg" alt=""></p>
 <p>在多稳态忆阻耦合强度$\rho=4$固定的情况下，记忆神经网络可以在不同初始状态下产生无穷多个共存的混沌吸引子。以下是改变$z_0$的情况下，产生的混沌吸引子对比图和zmax图，Lyapunov指数图。<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpx7ktw1f3j30u20ddqf6.jpg" alt=""></p>
 <p>下图直接展示了两个重要的现象:</p>
 <p>(i)忆阻神经网络随着 $z_0$ 的增大产生了无限多个不同位置的混沌吸引子;</p>
 <p>(ii)每个吸引子都有一个独立的初始状态范围 $z_0∈(kπ，(k + 2)π)$，其中k为偶数。<br>显然，每个吸引子的位置和初始状态都是可调的。这意味着该神经网络中的多稳态动力学是可控的。</p>
 <p><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gpx7peluwxj30v00dyn2m.jpg" alt=""></p>
-<h2 id="五、创新点"><a href="#五、创新点" class="headerlink" title="五、创新点"></a>五、创新点</h2><ol>
-<li>设计了多稳态忆阻。</li>
+<h2 id="五、优点和不足点"><a href="#五、优点和不足点" class="headerlink" title="五、优点和不足点"></a>五、优点和不足点</h2><ol>
+<li>设计了比较新颖的多稳态忆阻</li>
+<li>比较详细的说明了当z0变化的时候，吸引子位置的变化，并且通过混沌吸引子图，分岔图和Lyapunov指数图进行了说明。</li>
+<li>没有调整吸引子的初始状态，文章将初始向量设为了同一个，也就是没考虑可能的极限环情况。</li>
 </ol>
 <h1 id="基于忆阻的Hopfield神经网络中的嵌合现象"><a href="#基于忆阻的Hopfield神经网络中的嵌合现象" class="headerlink" title="基于忆阻的Hopfield神经网络中的嵌合现象"></a>基于忆阻的Hopfield神经网络中的嵌合现象</h1><p>Dynamic behaviors of hyperbolic-type memristor-based Hopfield neural network considering synaptic crosstalk<br>The European Physical Journal Special Topics<br><a target="_blank" rel="noopener" href="https://maiimg.com/pdf/?e=agdq/JHoVhyVkm">https://maiimg.com/pdf/?e=agdq/JHoVhyVkm</a> （该链接仅供学习用途）</p>
-<h2 id="一、摘要-1"><a href="#一、摘要-1" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>忆阻器在各个领域显示出巨大的潜力，可以产生新的特性。因此，基于记忆电阻的系统正在得到广泛的应用研究。本文研究了一种新的基于记忆电阻的双曲型Hopfield神经网络，作为耦合网络的单个单元。特别地，研究了系统各状态变量之间的耦合对网络行为的影响。结果表明，在不同的耦合强度下，耦合变量的变化会产生不同的模式，包括部分嵌合态、嵌合态、同步、不完全同步和振荡死亡。当基于记忆电阻的元件相互耦合时，增加耦合强度会导致从异步状态到嵌合体状态的规律性转变，然后再向同步状态转变。</p>
+<h2 id="一、摘要-1"><a href="#一、摘要-1" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>忆阻器在各个领域显示出巨大的潜力，可以产生新的特性。因此，基于记忆电阻的系统正在得到广泛的应用研究。本文研究了一种新的基于记忆电阻的双曲型Hopfield神经网络，作为耦合网络的单个单元。特别地，研究了系统各状态变量之间的耦合对网络行为的影响。结果表明，在不同的耦合强度下，耦合变量的变化会产生不同的系统模式，包括部分嵌合态、嵌合态、同步、不完全同步和振荡死亡。当基于记忆电阻的元件相互耦合时，增加耦合强度会导致从异步状态到嵌合体状态的规律性转变，然后再向同步状态转变。</p>
 <h2 id="二、intro-1"><a href="#二、intro-1" class="headerlink" title="二、intro"></a>二、intro</h2><p>同步态<br>嵌合状态：同步的一个非常特殊的现象，结合相干和非相干两种状态的混合状态可以自发地出现<br>部分嵌合状态<br>振荡死亡态：在一定条件下，整个耦合振子系统可以停止振荡并转移到一个全局非均匀的定态（即所谓的振荡死亡态）。</p>
 <h2 id="三、建模"><a href="#三、建模" class="headerlink" title="三、建模"></a>三、建模</h2><p>忆阻HNN的拓扑结构如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxgq109ebj30i30gugrk.jpg" alt=""></p>
 <p>连接矩阵如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpxgvdultvj30jj05574k.jpg" alt=""></p>
 <p>基于忆阻的HNN的常微分方程(ode)为:<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpxgy06ghrj30pk068wf9.jpg" alt=""></p>
 <p>其中，突触权重$w_{13}$定义为 $kW = k(a−b tanh(x_4))$ ， $k$为三个神经元的耦合强度。通过对$a、b、k$的参数选择不同的值，系统可以表现出不同的共存极限环吸引子和奇异吸引子，其中部分如下图所示。<br><img src="https://tva2.sinaimg.cn/large/005Au8gjly1gpxhl4i2gaj30t20jawlf.jpg" alt=""><br>其中a、b图里，蓝色为吸引子，红色为极限环，c图均为吸引子，d图蓝色为极限环，红色为定点。</p>
 <p>a) $a = 1,b=0.41,k=0.8$，可知此时有两个吸引区域。</p>
-<p>各变量间耦合的网络方程为:<br><img src="https://tva4.sinaimg.cn/mw690/005Au8gjly1gpxh2ywofuj312h0g5q52.jpg" alt=""></p>
+<p>各个神经网络变量间耦合的网络方程为:<br><img src="https://tva4.sinaimg.cn/mw690/005Au8gjly1gpxh2ywofuj312h0g5q52.jpg" alt=""></p>
 <p>其中 $[\dot{x}<em>{1i},\dot{x}</em>{2i},\dot{x}<em>{3i},\dot{x}</em>{4i}]$ 表示第i个单元的状态变量。每个基于记忆电阻的HNN节点对称地耦合到其最近的2P个节点。d1，…， d4为耦合强度。</p>
 <h2 id="四、仿真与结果"><a href="#四、仿真与结果" class="headerlink" title="四、仿真与结果"></a>四、仿真与结果</h2><p>系统参数固定为$a = 1,b=0.41,k=0.8$。由上图每个单元都有一个极限环和一个混沌吸引子共存。在构建网络时，N=100个HNN被耦合，P=30。在所有的模拟中，初始条件是从两个吸引盆地（这个翻译比较形象）中随机选择的。</p>
 <h3 id="x-1-状态变量耦合"><a href="#x-1-状态变量耦合" class="headerlink" title="$x_1$状态变量耦合"></a>$x_1$状态变量耦合</h3><p>首先设置$x_1$状态变量之间的耦合(即d2=d3=d4=0)，通过增加耦合强度d1，网络的数值模拟如下图所示。</p>
@@ -349,7 +351,7 @@
 <p><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpy2fms9ofj30wt12mu0x.jpg" alt=""></p>
 <p>(a) d4= 0.1<br>(b) d4= 0.3<br>(c) d4= 0.5<br>(d) d4= 0.8</p>
 <p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpy2hhkbb7j30zb0b8jym.jpg" alt=""></p>
-<h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><p>当$x_1$为耦合变量时，通过增加耦合强度出现异步和部分嵌合状态。<br>当耦合变量变为$x_2$时，网络对于小耦合强度是同步的，通过提高耦合强度，振子的吸引子从极限环转换为不动点。首先，观察到相干振荡死亡区和非相干振荡共存。然后非相干振荡变成相干的，最后在高耦合强度下，所有的吸引子都是不动点，并且观察到振荡死亡状态。<br>当耦合变量变为包含忆阻器的$x_3$时，耦合强度的增加导致从异步状态到嵌合状态的转变，然后到不完全同步，最后完全同步。<br>$x_4$为耦合变量时，网络只是表现出异步振荡。</p>
+<h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><p>$x_1$为耦合变量时，通过增加耦合强度出现异步和部分嵌合状态。<br>当耦合变量变为$x_2$时，网络对于小耦合强度是同步的，通过提高耦合强度，振子的吸引子从极限环转换为不动点。首先，观察到相干振荡死亡区和非相干振荡共存。然后非相干振荡变成相干的，最后在高耦合强度下，所有的吸引子都是不动点，并且观察到振荡死亡状态。<br>耦合变量变为包含忆阻器的$x_3$时，耦合强度的增加导致从异步状态到嵌合状态的转变，然后到不完全同步，最后完全同步。<br>$x_4$为耦合变量时，网络只是表现出异步振荡。<br>因此可以知道，不同的神经网络的耦合强度不同的时候，神经网络之间的同步嵌合状态是不一样的。</p>
 <h1 id="突触耦合的双曲型忆阻Hopfield神经网络的动力学行为"><a href="#突触耦合的双曲型忆阻Hopfield神经网络的动力学行为" class="headerlink" title="突触耦合的双曲型忆阻Hopfield神经网络的动力学行为"></a>突触耦合的双曲型忆阻Hopfield神经网络的动力学行为</h1><p>Dynamic behaviors of hyperbolic-type memristor-based Hopfield neural network considering synaptic crosstalk<br>Chaos 30, 033108 (2020 ); doi: 10.1063/5.0002076<br><a target="_blank" rel="noopener" href="https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m">https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m</a> (该链接仅供学习用途)</p>
 
     </div>
@@ -375,7 +377,10 @@
     <a href="/2021/04/20/%E4%BA%BA%E5%A3%B0%E6%B7%B7%E5%A3%B0%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/" rel="prev" title="人声混声踩坑指南（刚开坑）">
       <i class="fa fa-chevron-left"></i> 人声混声踩坑指南（刚开坑）
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/28/hexo%E4%B8%8A%E4%BC%A0%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99/" rel="next" title="Hexo的几种报错">
+      Hexo的几种报错 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -435,7 +440,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%A8%B3%E6%80%81%E5%BF%86%E9%98%BB%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">多稳态忆阻及其在神经网络中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%91%98%E8%A6%81"><span class="nav-text">一、摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81intro"><span class="nav-text">二、intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A4%9A%E7%A8%B3%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="nav-text">三、多稳态模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7"><span class="nav-text">伏安特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%A8%B3%E6%80%81%E7%89%B9%E6%80%A7"><span class="nav-text">多稳态特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Hopfield"><span class="nav-text">四、Hopfield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%88%9B%E6%96%B0%E7%82%B9"><span class="nav-text">五、创新点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%BF%86%E9%98%BB%E7%9A%84Hopfield%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%B5%8C%E5%90%88%E7%8E%B0%E8%B1%A1"><span class="nav-text">基于忆阻的Hopfield神经网络中的嵌合现象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%91%98%E8%A6%81-1"><span class="nav-text">一、摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81intro-1"><span class="nav-text">二、intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BB%BA%E6%A8%A1"><span class="nav-text">三、建模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BB%BF%E7%9C%9F%E4%B8%8E%E7%BB%93%E6%9E%9C"><span class="nav-text">四、仿真与结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#x-1-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_1$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-2-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_2$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-3-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_3$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-4-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_4$状态变量耦合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E7%BB%93%E8%AE%BA"><span class="nav-text">五、结论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AA%81%E8%A7%A6%E8%80%A6%E5%90%88%E7%9A%84%E5%8F%8C%E6%9B%B2%E5%9E%8B%E5%BF%86%E9%98%BBHopfield%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%A8%E5%8A%9B%E5%AD%A6%E8%A1%8C%E4%B8%BA"><span class="nav-text">突触耦合的双曲型忆阻Hopfield神经网络的动力学行为</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%A8%B3%E6%80%81%E5%BF%86%E9%98%BB%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">多稳态忆阻及其在神经网络中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%91%98%E8%A6%81"><span class="nav-text">一、摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81intro"><span class="nav-text">二、intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A4%9A%E7%A8%B3%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="nav-text">三、多稳态模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7"><span class="nav-text">伏安特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%A8%B3%E6%80%81%E7%89%B9%E6%80%A7"><span class="nav-text">多稳态特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Hopfield"><span class="nav-text">四、Hopfield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BC%98%E7%82%B9%E5%92%8C%E4%B8%8D%E8%B6%B3%E7%82%B9"><span class="nav-text">五、优点和不足点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%BF%86%E9%98%BB%E7%9A%84Hopfield%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%B5%8C%E5%90%88%E7%8E%B0%E8%B1%A1"><span class="nav-text">基于忆阻的Hopfield神经网络中的嵌合现象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%91%98%E8%A6%81-1"><span class="nav-text">一、摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81intro-1"><span class="nav-text">二、intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BB%BA%E6%A8%A1"><span class="nav-text">三、建模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BB%BF%E7%9C%9F%E4%B8%8E%E7%BB%93%E6%9E%9C"><span class="nav-text">四、仿真与结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#x-1-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_1$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-2-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_2$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-3-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_3$状态变量耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x-4-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E8%80%A6%E5%90%88"><span class="nav-text">$x_4$状态变量耦合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E7%BB%93%E8%AE%BA"><span class="nav-text">五、结论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AA%81%E8%A7%A6%E8%80%A6%E5%90%88%E7%9A%84%E5%8F%8C%E6%9B%B2%E5%9E%8B%E5%BF%86%E9%98%BBHopfield%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%A8%E5%8A%9B%E5%AD%A6%E8%A1%8C%E4%B8%BA"><span class="nav-text">突触耦合的双曲型忆阻Hopfield神经网络的动力学行为</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -450,20 +455,20 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
