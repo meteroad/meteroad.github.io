@@ -280,8 +280,8 @@ nums2.length == n
   <entry>
     <title>多稳态忆阻及其在神经网络中的应用（及两篇引文）</title>
     <url>/2021/04/26/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</url>
-    <content><![CDATA[<h1 id="多稳态忆阻及其在神经网络中的应用"><a href="#多稳态忆阻及其在神经网络中的应用" class="headerlink" title="多稳态忆阻及其在神经网络中的应用"></a>多稳态忆阻及其在神经网络中的应用</h1><p>A Multi-Stable Memristor and Its Application in a Neural Network<br>IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS<br><a href="https://maiimg.com/pdf/?e=agFURqFOchWOQm">https://maiimg.com/pdf/?e=agFURqFOchWOQm</a> (该链接仅供学习用途)</p>
-<h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>&emsp;&emsp;目前，关于基于忆阻的<em>多稳态系统</em>有很多研究。然而，目前还没有关于多稳态忆阻的研究。本文建立了一个具有多稳态的忆阻数学模型。<span id="more"></span>利用标准非线性理论以及电路和系统理论揭示了多稳态动力学的起源。此外，利用多稳态记忆电阻器模拟Hopfield神经网络中的突触连接。忆阻神经网络成功地产生了<strong>无穷多个共存的混沌吸引子</strong>，这在以前传统的hopfield神经网络中是没有发现的。这一结果也在基于商用电子元件的模拟电路中得到证实。</p>
+    <content><![CDATA[<h1 id="多稳态忆阻及其在神经网络中的应用"><a href="#多稳态忆阻及其在神经网络中的应用" class="headerlink" title="多稳态忆阻及其在神经网络中的应用"></a>多稳态忆阻及其在神经网络中的应用</h1><p>A Multi-Stable Memristor and Its Application in a Neural Network<br><span id="more"></span><br>IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS<br><a href="https://maiimg.com/pdf/?e=agFURqFOchWOQm">https://maiimg.com/pdf/?e=agFURqFOchWOQm</a> (该链接仅供学习用途)</p>
+<h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>&emsp;&emsp;目前，关于基于忆阻的<em>多稳态系统</em>有很多研究。然而，目前还没有关于多稳态忆阻的研究。本文建立了一个具有多稳态的忆阻数学模型。利用标准非线性理论以及电路和系统理论揭示了多稳态动力学的起源。此外，利用多稳态记忆电阻器模拟Hopfield神经网络中的突触连接。忆阻神经网络成功地产生了<strong>无穷多个共存的混沌吸引子</strong>，这在以前传统的hopfield神经网络中是没有发现的。这一结果也在基于商用电子元件的模拟电路中得到证实。</p>
 <h2 id="二、intro"><a href="#二、intro" class="headerlink" title="二、intro"></a>二、intro</h2><p>略</p>
 <h2 id="三、多稳态模型"><a href="#三、多稳态模型" class="headerlink" title="三、多稳态模型"></a>三、多稳态模型</h2><p>根据忆阻器理论，压控通用忆阻器模型可以定义为<br>欧姆定律：</p>
 <script type="math/tex; mode=display">i = G(x)v</script><p>状态方程：</p>
@@ -292,7 +292,7 @@ nums2.length == n
 <p>带入欧姆方程可得：</p>
 <p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpxcli5cm4j30lk03hglw.jpg" alt=""></p>
 <p>很显然是由一个基频和谐波分量组成。</p>
-<h3 id="伏安特性"><a href="#伏安特性" class="headerlink" title="伏安特性"></a>伏安特性</h3><p>磁滞回路图，前一个图是振幅A变化的时候，回路图的变化。后一个图是F变化的时候的回路图，F越大越接近纯直线。</p>
+<h3 id="伏安特性"><a href="#伏安特性" class="headerlink" title="伏安特性"></a>伏安特性</h3><p>用磁滞回路图描述，前一个图是振幅A变化的时候，回路图的变化。后一个图是F变化的时候的回路图，F越大越接近纯直线。</p>
 <p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpx9cbqojfj30nb0b2dis.jpg" alt=""></p>
 <h3 id="多稳态特性"><a href="#多稳态特性" class="headerlink" title="多稳态特性"></a>多稳态特性</h3><p>令v=0，忆阻的状态方程就化为了如下：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpxanoh6dfj309u01h0sl.jpg" alt=""></p>
 <p>多稳态忆阻器的POP，其中k为偶数。（本文利用激励中断图(POP)来揭示忆阻器的多重稳定性），具体原理不用知道，只需要知道奇稳定，偶不稳定即可。</p>
@@ -305,7 +305,7 @@ nums2.length == n
 <h2 id="四、Hopfield"><a href="#四、Hopfield" class="headerlink" title="四、Hopfield"></a>四、Hopfield</h2><p>Hopfield神经网络的节点电流方程如下：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpx6m4x5pfj30jc03agln.jpg" alt=""></p>
 <p>忆阻神经网络的拓扑结构图：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx65stf7sj30fw0bfdia.jpg" alt=""></p>
 <p>令$C<em>i=1,R_i=1,I_i=0$,该带忆阻神经网络的方程如下：<br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gpx6k99xd9j30lm06b750.jpg" alt=""><br>其中$G=z$ 代表 $\omega</em>{41}$ ，$\rho$ 代表耦合强度。当神经网络的所有权值都为0的时候，有无数个离散平衡点。</p>
-<p>分岔图和Lyapunov指数图，其中$\rho$的变化范围是从0-5，节点的初始状态为$(1,1,1,1,1)$。可以看出当 $\rho&gt;2.8$的时候，神经网络进入稳定混沌状态。<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx694zu95j30wu0chtin.jpg" alt=""><br>Lyapunov指数 $\lambda$ 表示相空间相邻轨迹的平均指数发散率的数值特征。又称李雅普诺夫特征指数，是用于识别混沌运动若干数值的特征之一？？。</p>
+<p>分岔图和Lyapunov指数图，其中$\rho$的变化范围是从0-5，节点的初始状态为$(1,1,1,1,1)$。可以看出当 $\rho&gt;2.8$的时候，神经网络进入稳定混沌状态。<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gpx694zu95j30wu0chtin.jpg" alt=""><br>Lyapunov指数 $\lambda$ 表示相空间相邻轨迹的平均指数发散率的数值特征。又称李雅普诺夫特征指数，是用于识别混沌运动若干数值的特征之一。</p>
 <p>下图分别表示当$\rho=0.7,1.5,2.2,4$的时候的数值仿真相图，也就是吸引子的图，由下图可以看出当$\rho=4$的时候将不是周期性的吸引子而是混沌吸引子。<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gpx76pz7vqj30lp07kadj.jpg" alt=""></p>
 <p>在多稳态忆阻耦合强度$\rho=4$固定的情况下，记忆神经网络可以在不同初始状态下产生无穷多个共存的混沌吸引子。以下是改变$z_0$的情况下，产生的混沌吸引子对比图和zmax图，Lyapunov指数图。<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpx7ktw1f3j30u20ddqf6.jpg" alt=""></p>
 <p>下图直接展示了两个重要的现象:</p>
@@ -354,7 +354,8 @@ nums2.length == n
 <p><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gpy2fms9ofj30wt12mu0x.jpg" alt=""></p>
 <p>(a) d4= 0.1<br>(b) d4= 0.3<br>(c) d4= 0.5<br>(d) d4= 0.8</p>
 <p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpy2hhkbb7j30zb0b8jym.jpg" alt=""></p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>当$x_1$为耦合变量时，通过增加耦合强度出现异步和部分嵌合状态。<br>当耦合变量变为$x_2$时，网络对于小耦合强度是同步的，通过提高耦合强度，振子的吸引子从极限环转换为不动点。首先，观察到相干振荡死亡区和非相干振荡共存。然后非相干振荡变成相干的，最后在高耦合强度下，所有的吸引子都是不动点，并且观察到振荡死亡状态。<br>当耦合变量变为包含忆阻器的$x_3$时，耦合强度的增加导致从异步状态到嵌合状态的转变，然后到不完全同步，最后完全同步。<br>$x_4$为耦合变量时，网络只是表现出异步振荡。</p>
+<h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><p>当$x_1$为耦合变量时，通过增加耦合强度出现异步和部分嵌合状态。<br>当耦合变量变为$x_2$时，网络对于小耦合强度是同步的，通过提高耦合强度，振子的吸引子从极限环转换为不动点。首先，观察到相干振荡死亡区和非相干振荡共存。然后非相干振荡变成相干的，最后在高耦合强度下，所有的吸引子都是不动点，并且观察到振荡死亡状态。<br>当耦合变量变为包含忆阻器的$x_3$时，耦合强度的增加导致从异步状态到嵌合状态的转变，然后到不完全同步，最后完全同步。<br>$x_4$为耦合变量时，网络只是表现出异步振荡。</p>
+<h1 id="突触耦合的双曲型忆阻Hopfield神经网络的动力学行为"><a href="#突触耦合的双曲型忆阻Hopfield神经网络的动力学行为" class="headerlink" title="突触耦合的双曲型忆阻Hopfield神经网络的动力学行为"></a>突触耦合的双曲型忆阻Hopfield神经网络的动力学行为</h1><p>Dynamic behaviors of hyperbolic-type memristor-based Hopfield neural network considering synaptic crosstalk<br>Chaos 30, 033108 (2020 ); doi: 10.1063/5.0002076<br><a href="https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m">https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m</a> (该链接仅供学习用途)</p>
 ]]></content>
       <categories>
         <category>毕业设计</category>
@@ -368,8 +369,8 @@ nums2.length == n
   </entry>
   <entry>
     <title>人声混声踩坑指南（刚开坑）</title>
-    <url>/2021/04/29/%E4%BA%BA%E5%A3%B0%E6%B7%B7%E5%A3%B0%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="人声混声踩坑指南"><a href="#人声混声踩坑指南" class="headerlink" title="人声混声踩坑指南"></a>人声混声踩坑指南</h1><p>首先就是不能勾选音频栏的监听，因为我的麦克风自带声卡，如果再用电脑声卡将难以一起带动。</p>
+    <url>/2021/04/20/%E4%BA%BA%E5%A3%B0%E6%B7%B7%E5%A3%B0%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="人声混声踩坑指南"><a href="#人声混声踩坑指南" class="headerlink" title="人声混声踩坑指南"></a>人声混声踩坑指南</h1><p>首先就是不能勾选音频栏的监听，因为我的麦克风自带声卡，如果再用电脑声卡将难以一起带动。<br><span id="more"></span></p>
 <p>wavestune，一个非常好的校准音高的插件，但是建议自己手动修音。</p>
 <p>混响目前感觉还是不是特别会。</p>
 <p>消除气息可以直接用包络，降噪的方法目前还是不太会。</p>
@@ -379,6 +380,7 @@ nums2.length == n
 <p><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjgy1gpjiyk8dlfj314y0uewm0.jpg" alt="image"></p>
 <p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjgy1gpjj5bb5ygj314u0ug10d.jpg" alt="image"></p>
 <p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjgy1gpjkq2x8hij303x05ua9w.jpg" alt="image"></p>
+<p>下一首翻唱曲目选择黄龄的醉。</p>
 ]]></content>
       <categories>
         <category>人声</category>
