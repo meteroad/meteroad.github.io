@@ -357,7 +357,6 @@ nums2.length == n
 <p>(a) d4= 0.1<br>(b) d4= 0.3<br>(c) d4= 0.5<br>(d) d4= 0.8</p>
 <p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gpy2hhkbb7j30zb0b8jym.jpg" alt=""></p>
 <h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><p>$x_1$为耦合变量时，通过增加耦合强度出现异步和部分嵌合状态。<br>当耦合变量变为$x_2$时，网络对于小耦合强度是同步的，通过提高耦合强度，振子的吸引子从极限环转换为不动点。首先，观察到相干振荡死亡区和非相干振荡共存。然后非相干振荡变成相干的，最后在高耦合强度下，所有的吸引子都是不动点，并且观察到振荡死亡状态。<br>耦合变量变为包含忆阻器的$x_3$时，耦合强度的增加导致从异步状态到嵌合状态的转变，然后到不完全同步，最后完全同步。<br>$x_4$为耦合变量时，网络只是表现出异步振荡。<br>因此可以知道，不同的神经网络的耦合强度不同的时候，神经网络之间的同步嵌合状态是不一样的。</p>
-<h1 id="突触耦合的双曲型忆阻Hopfield神经网络的动力学行为"><a href="#突触耦合的双曲型忆阻Hopfield神经网络的动力学行为" class="headerlink" title="突触耦合的双曲型忆阻Hopfield神经网络的动力学行为"></a>突触耦合的双曲型忆阻Hopfield神经网络的动力学行为</h1><p>Dynamic behaviors of hyperbolic-type memristor-based Hopfield neural network considering synaptic crosstalk<br>Chaos 30, 033108 (2020 ); doi: 10.1063/5.0002076<br><a href="https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m">https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m</a> (该链接仅供学习用途)</p>
 ]]></content>
       <categories>
         <category>毕业设计</category>
@@ -367,6 +366,7 @@ nums2.length == n
         <tag>忆阻</tag>
         <tag>多稳态</tag>
         <tag>文献阅读</tag>
+        <tag>复杂动力学</tag>
       </tags>
   </entry>
   <entry>
@@ -408,6 +408,64 @@ nums2.length == n
       </categories>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>考虑突触串扰的双曲型忆阻Hopfield神经网络的动力学行为(文献阅读)</title>
+    <url>/2021/05/05/%E8%80%83%E8%99%91%E7%AA%81%E8%A7%A6%E4%B8%B2%E6%89%B0%E7%9A%84%E5%8F%8C%E6%9B%B2%E5%9E%8B%E5%BF%86%E9%98%BBHopfield%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%A8%E5%8A%9B%E5%AD%A6%E8%A1%8C%E4%B8%BA/</url>
+    <content><![CDATA[<h1 id="考虑突触串扰的双曲型忆阻Hopfield神经网络的动力学行为"><a href="#考虑突触串扰的双曲型忆阻Hopfield神经网络的动力学行为" class="headerlink" title="考虑突触串扰的双曲型忆阻Hopfield神经网络的动力学行为"></a>考虑突触串扰的双曲型忆阻Hopfield神经网络的动力学行为</h1><p>Dynamic behaviors of hyperbolic-type memristor-based Hopfield neural network considering synaptic crosstalk<br><span id="more"></span>Cite as: Chaos 30, 033108 (2020); <a href="https://doi.org/10.1063/5.0002076">https://doi.org/10.1063/5.0002076</a><br><a href="https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m">https://maiimg.com/pdf/?e=agS3v4tv8tYQ2m</a> (该链接仅供学习用途)</p>
+<h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><p>突触之间发生的串扰现象可以影响信号传输，在某些情况下，还会影响大脑功能。因此，研究受突触串扰影响的神经网络的动态行为具有重要意义。为了实现这一目标，本文设计了一种新的电路来模拟耦合双曲忆阻器，然后利用该电路来模拟Hopfield神经网络(HNN)的突触串扰。然后，在不同的串扰强度下，观察到HNN的多重稳定性、不对称吸引子和反单调性。利用分岔图、动态图和李雅普诺夫指数谱分析了HNN的动力学行为，并考虑了不同级别的串扰强度。仿真结果还表明，不同的串扰强度会导致HNN系统的广泛非线性行为。</p>
+<h2 id="二、两个耦合双曲记忆仿真器"><a href="#二、两个耦合双曲记忆仿真器" class="headerlink" title="二、两个耦合双曲记忆仿真器"></a>二、两个耦合双曲记忆仿真器</h2><p>神经元激活函数一般采用双曲正切函数（tanh）表示。双曲型磁流变仿真器的本构关系可以用如下公式表示：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gq7avi6c0rj30rj05g0sz.jpg" alt=""></p>
+<p>双曲正切函数单元的输出可以通过如下公式表示：<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gq7b7jvbztj30hd028dfp.jpg" alt=""></p>
+<p>通过两个MR仿真器之间的耦合连接来仿真两个突触的串扰，对于两个突触权值，通过将参数缩放为无因次形式，我们得到<br><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gq7b8o2dqdj30fg03ijrh.jpg" alt=""></p>
+<h2 id="三、耦合双曲型忆阻HNN神经元"><a href="#三、耦合双曲型忆阻HNN神经元" class="headerlink" title="三、耦合双曲型忆阻HNN神经元"></a>三、耦合双曲型忆阻HNN神经元</h2><p>第i个节点的状态方程：<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7bbpgpdnj30gw02maa1.jpg" alt=""></p>
+<p>本研究采用了一个包含三个神经元的HNN系统，在神经元1和神经元3之间建立了两个耦合忆阻来模拟串扰。这种带有串扰的记忆HNN可以用无量纲形式导出<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gq7be4qqyyj30jo071aap.jpg" alt=""></p>
+<p>注意$W_1= a_1−b_1tanh(u) + c_1tanh(w)$是来自神经元1影响神经元3的突触权值，$W_2= a_2−b_2tanh(w) + c_2tanh(u)$是来自神经元3影响神经元1的突触权值。$k_1$和$k_2$为耦合强度，$c_1$和$c_2$分别为w1和W2的串扰强度。</p>
+<p>引入李亚普诺夫函数，有<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gq7br1o25sj30iz02gdft.jpg" alt=""></p>
+<p>求导，将(7)带入:<br><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gq7bwmwgx8j30ll079mxp.jpg" alt=""></p>
+<p>将后面一串赋值<br><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gq7bxmyvcdj30le04dq3b.jpg" alt=""></p>
+<p>公式（11）可以被重写成：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gq7bygcjw9j30j001ljrc.jpg" alt=""></p>
+<p>由$W_1$和$W_2$定义可知：<br><img src="https://tva1.sinaimg.cn/mw690/005Au8gjly1gq7bywhibjj30hg04amx6.jpg" alt=""></p>
+<p>写成以下形式：<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7bzz64pgj30ke03zjrk.jpg" alt=""></p>
+<p>公式12可以被化简成如下形式：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gq7c225afbj30l00e0gmu.jpg" alt=""></p>
+<p>此条件恒成立（存疑）：<br><img src="https://tva4.sinaimg.cn/mw690/005Au8gjly1gq7cejaxa5j30j405o3yu.jpg" alt=""></p>
+<p>然后就可以得出<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gq7cfl2tb3j30i801yq2w.jpg" alt=""></p>
+<h2 id="四、平衡点和稳定性分析"><a href="#四、平衡点和稳定性分析" class="headerlink" title="四、平衡点和稳定性分析"></a>四、平衡点和稳定性分析</h2><p>设定如下权值矩阵：<br><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gq7crzbnlvj30gc03mq2z.jpg" alt=""></p>
+<h3 id="A-对称性"><a href="#A-对称性" class="headerlink" title="A.对称性"></a>A.对称性</h3><p>改变初始条件和变量(x, y, z, u, w, b1, b2, c1, c2)。系统在(x, y, z, u, w, b1, b2, c1, c2)到(−x，−y，−z，−u，−w，−b1，−b2，−c1，−c2)的变换下是不变的，因此，具有串扰的HNN是对称的。<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gq7cvhekujj30kr0apgnf.jpg" alt=""><br>图5(a)和图5(b)所示的吸引子的系统参数分别为:$b1= 0.02, b2= 0.03, c1= 0.2, c2= 0.2$和$b1=−0.02,b2=−0.03,c1=−0.2,c2=−0.2$。图5(a)和图5(b)的初始条件分别为$(0,0.1,0,0,0,0)$和$(0，−0.1,0,0,0)$。当参数和初始条件都相反时，可以发现混沌相轨图具有反中心对称性(图中关于z=x对称)。</p>
+<h3 id="B-平衡点分析"><a href="#B-平衡点分析" class="headerlink" title="B.平衡点分析"></a>B.平衡点分析</h3><p>将状态方程左侧设为0，可以从数值上确定HNN的平衡点。可以从数值上确定具有串扰的HNN的平衡点，即1个零平衡点$P0(0,0,0,0,0)$和2个非零平衡点$P_1(η_1，η_2，η_3，η_4，η_5)$和$P_2(η_1，η_2，η_3，η_4，η_5)$。对于未定义的常数变量，$η_1 = x_1，η_3 = z_1， \mu_1 = x_2， \mu_3 = z_2$的非零平衡点通过求解以下两个方程集计算:<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gq7miyufmbj30iv0c2aau.jpg" alt=""></p>
+<p>将方程组Eq.(22)代入Eq.(7)可以得到如下两条曲线（仅需简单消y即可）：<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gq7mrxutonj30mt08z0tm.jpg" alt=""></p>
+<p>式中(x1,z1)、(x2,z2)为上述两条函数曲线的交点，(x1,z1)、(x2,z2)可以用图解分析法确定。以$k_1= k_2= 1, a_1= 1, a_2= 7, b_1= 0.02, b_2= 0.03, c_1= c_2= 0.2$为例<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7n2pex2ij30lw0n3go3.jpg" alt=""></p>
+<p>显然，P1和P2这两个非零的平衡点是不对称的。由图可知串扰强度c1对函数$h_2(x,z)$的形状有很大影响。因此，可以利用串扰强度系数来改变非对称平衡点的位置。<br>平衡点处的雅可比矩阵如下：<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7njnep0kj30la065t94.jpg" alt=""></p>
+<p>其中：<br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gq7nk2n55wj30fs02pq30.jpg" alt=""><br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gq7npb9gp5j30f905tq3d.jpg" alt=""></p>
+<p>在P0平衡点，得到特征多项式：<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7nq7irpqj30la047jrn.jpg" alt=""></p>
+<p>特征多项式方程中的系数只与$a_1,k_1$和$a_2,k_2$有关，而与忆阻内部参数b1和b2以及串扰强度c1和c2无关。<br>k1= 1, a1= 1, a2= 7时，根据Routh准则，当0.7381 &lt; k2 &lt; 0.8206时，可以确认p0是稳定的。</p>
+<p>对于两个非零平衡点p1和P2，可以令特征方程为0求解对应的特征值。当$k_1= k_2= 1,a_1= 1,a_2= 7,b_1= 0.02,b_2= 0.03$和$k_1= 0.8, k_2= 1,a_1= 1,a_2= 7,b_1= 0.02,b_2= 0.03$作为不同的串扰强度系数时，两个非零平衡点、对应的特征值和混沌吸引子类型分别如表I和表II所示。<br><img src="https://tva1.sinaimg.cn/large/005Au8gjly1gq7o1kqltjj31bn0fz79q.jpg" alt=""><br><img src="https://tva3.sinaimg.cn/large/005Au8gjly1gq7o0nhmjvj31bs0c5jvb.jpg" alt=""></p>
+<h2 id="五、不对称吸引子的共存和不同串扰强度下的多稳态行为"><a href="#五、不对称吸引子的共存和不同串扰强度下的多稳态行为" class="headerlink" title="五、不对称吸引子的共存和不同串扰强度下的多稳态行为"></a>五、不对称吸引子的共存和不同串扰强度下的多稳态行为</h2><h3 id="A-c1改变时的动态特性"><a href="#A-c1改变时的动态特性" class="headerlink" title="A.c1改变时的动态特性"></a>A.c1改变时的动态特性</h3><p>当$k1= k2= 1, a1= 1, a2= 7, b1= 0.02, b2= 0.03, c2= 0.2$，初始仿真条件设为$(0,0.1,0,0,0)$时，状态变量z随第一次串扰强度参数$c1$变化的分叉图如图8(a)所示。8(b)是初始条件为(0，−0.1,0,0,0)时。可以看出两个图并不对称。<br><img src="https://tvax2.sinaimg.cn/mw690/005Au8gjly1gq7d8z5rmpj30q10ekwgy.jpg" alt=""></p>
+<p>图9绘制了$x - z$平面上共存的非对称吸引子的相图，其中初始条件为$(0,0.1,0,0,0,0,0)$和$(0，−0.1,0,0,0,0)$的相图分别用红色和蓝色绘制。这些结果表明了非对称吸引子的存在和多稳定性行为。<br>(a)c1=−0.28<br>(b)c1=−0.05<br>(c)c1=−0.05<br>(d)c1= 0.2<br>(e)c1= 0.292<br>(f)c1= 0.335<br>可以发现，相图与分岔图吻合。<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gq7duxgumtj30me0tg78j.jpg" alt=""></p>
+<p>下图是c1变化时候的lyapunov指数图。<br>(a)初始条件(0,0.1,0,0,0)<br>(b)初始条件(0，−0.1,0,0,0)<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gq7dyoj8bjj30m909sdhf.jpg" alt="fig.10"></p>
+<h3 id="B-c2改变时的动态特性"><a href="#B-c2改变时的动态特性" class="headerlink" title="B.c2改变时的动态特性"></a>B.c2改变时的动态特性</h3><p>不同初始条件下的分岔图：(a)初始条件(0,0.1,0,0,0,0,0)和(b)初始条件(0，−0.1,0,0,0,0)。<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7e1zjntmj30mf09itbf.jpg" alt="fig.11"></p>
+<p>不同c2值时候两种初始条件下的相图：<br>(a)c2 =−1.5<br>(b)c2 =−0.95<br>(c)c2 =−0.8<br>(d)c2 =−0.35<br>(e)c2 = 1<br>(f)c2= 2.2<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gq7e2erzj2j30n50t4gp3.jpg" alt="fig.12"></p>
+<p>选择c1= c2= 0.2作为典型的混沌串扰强度参数，在初始条件y(0)改变的情况下绘制的分岔图如图13所示。可以发现，混沌状态之间存在一个周期-1窗口，<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjly1gq7eaiqjudj30lt0gh7am.jpg" alt=""></p>
+<p>图14绘制了典型混沌参数$c1= c2= 0.2$下初始条件$x<em>{(0)}$和$y</em>{(0)}$的动态映射。混沌状态用绿色标记，而周期状态的区域用红色标记<br><img src="https://tva4.sinaimg.cn/mw690/005Au8gjly1gq7kehy802j30kc0gxmzm.jpg" alt=""></p>
+<p>图15为随串扰强度c2变化的Lyapunov指数谱，与分岔图相吻合。<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gq7khdcsp0j30ib0eqgn8.jpg" alt="fig.15"></p>
+<p>在初始条件$(0,0.1,0,0,0,0)$下，分别以串扰强度参数$c_1$和$c_2$为横轴变量和纵轴变量，绘制出串扰强度参数的动态映射如图16所示。<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7kiqj9x1j30id0fzwha.jpg" alt=""></p>
+<h2 id="六、抗单调性和随串扰强度变化的吸引子行为"><a href="#六、抗单调性和随串扰强度变化的吸引子行为" class="headerlink" title="六、抗单调性和随串扰强度变化的吸引子行为"></a>六、抗单调性和随串扰强度变化的吸引子行为</h2><h3 id="A-变化的串扰强度时重新合并的Feigenbaum树"><a href="#A-变化的串扰强度时重新合并的Feigenbaum树" class="headerlink" title="A.变化的串扰强度时重新合并的Feigenbaum树"></a>A.变化的串扰强度时重新合并的Feigenbaum树</h3><p>以突触权值矩阵$W_0$为例，当$k_1= k_2= 1, a_1= 1, a_2= 7, b_2= 0.03, c_2= 0.2$时，可以得到不同c1值下通过改变b1而得到的分岔图。图18通过减少c1显示了从气泡到树的演变过程。<br><img src="https://tva2.sinaimg.cn/mw690/005Au8gjly1gq7kn7doelj30ly0nygpj.jpg" alt=""><br>同理，增加$c_2$<br><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7kt7waauj30m80onjvt.jpg" alt=""><br>可以发现，当两个串扰强度参数发生变化时，Feigenbaum树的动态行为非常丰富。图18和图19反映了类似的演化过程，从四个平行的二循环气泡分支开始，然后分叉为四个四循环气泡分支和小树。随着串扰强度参数的进一步变化，不同分支的树合并，气泡与树之间以及两个不同的树之间出现串联。</p>
+<p>当改变其中一个串扰强度时，所绘制的一组分支图对于描述重新归并的Feigenbaum树与该串扰强度之间的关系具有高度代表性。<br><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gq7kw01vojj30lx0ow79i.jpg" alt=""><br>如图20所示，随着$c_1$的增大，图中出现了两个仅与左侧相连的气泡。20(a)由于Feigenbaum分岔，气泡演化成树并继续融合。在20(d)，由于树的融合，会产生一个周期为5的周期性窗口。最后，两棵树完全合并后，出现了（-0.9）分岔路径。</p>
+<h3 id="B-改变串扰强度对吸引子类型的影响"><a href="#B-改变串扰强度对吸引子类型的影响" class="headerlink" title="B.改变串扰强度对吸引子类型的影响"></a>B.改变串扰强度对吸引子类型的影响</h3><p>当$k_1= 0.8, k_2= 1, a_1= 1, a_2= 7, b_1= 0.02, b_2= 0.03, c_2= 0.2$时，增加$c_1$时状态变量z的分叉图如图21(a)所示。相应的李雅普诺夫指数谱如图21(b)所示。<br><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gq7l7jxhcwj30r40ewn0z.jpg" alt=""></p>
+<p><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjly1gq7lbigehuj30q90q3tcv.jpg" alt=""></p>
+<p>当其他条件和上面相同，$c_1=0.2$时，可以得到改变$c_2$状态变量z的分叉图。在图23中可以观察到间歇性混沌以及混沌与周期振荡之间的动力学行为变化，</p>
+<p><img src="https://tvax1.sinaimg.cn/mw690/005Au8gjly1gq7lgelgaxj30qk0euq6d.jpg" alt=""></p>
+<p>相图如图24所示。可以看出，系统产生了双涡旋混沌、周期振荡和单涡旋混沌。随着串扰强度c2的增加，该系统的吸引子类型由单卷变为双卷，再变为单卷。</p>
+<p><img src="https://tvax3.sinaimg.cn/mw690/005Au8gjly1gq7lin3hnxj30qn0pk0wq.jpg" alt="image"></p>
+<h2 id="七、仿真"><a href="#七、仿真" class="headerlink" title="七、仿真"></a>七、仿真</h2><p>利用PSIM进行仿真。与理论分析部分结果一致，略。</p>
+]]></content>
+      <categories>
+        <category>毕业设计</category>
+      </categories>
+      <tags>
+        <tag>复杂网络</tag>
+        <tag>拓扑识别</tag>
+        <tag>同步，复杂动力学</tag>
       </tags>
   </entry>
 </search>
