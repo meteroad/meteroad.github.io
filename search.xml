@@ -372,16 +372,21 @@ nums2.length == n
   <entry>
     <title>人声混声踩坑指南（刚开坑）</title>
     <url>/2021/04/20/%E4%BA%BA%E5%A3%B0%E6%B7%B7%E5%A3%B0%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="人声混声踩坑指南"><a href="#人声混声踩坑指南" class="headerlink" title="人声混声踩坑指南"></a>人声混声踩坑指南</h1><p>首先就是不能勾选音频栏的监听，因为我的麦克风自带声卡，如果再用电脑声卡将难以一起带动。<br><span id="more"></span></p>
-<p>wavestune，一个非常好的校准音高的插件，但是建议自己手动修音。</p>
-<p>混响目前感觉还是不是特别会。</p>
+    <content><![CDATA[<h1 id="人声混声踩坑指南"><a href="#人声混声踩坑指南" class="headerlink" title="人声混声踩坑指南"></a>人声混声踩坑指南</h1><h2 id="录制基础问题集合"><a href="#录制基础问题集合" class="headerlink" title="录制基础问题集合"></a>录制基础问题集合</h2><ol>
+<li><p>不能勾选音频栏的监听，因为我的麦克风自带声卡，如果再用电脑声卡将难以一起带动。</p>
+<span id="more"></span>
+</li>
+<li><p>blueyeti等麦克风侦听没有声音的解决方法：<br>1、打开声音控制面板<br><img src="https://tvax1.sinaimg.cn/large/005Au8gjgy1gqa8vkkzdbj30ps0tc76g.jpg" alt=""><br>2、将级别下面麦克风的小喇叭打开。<br><img src="https://tvax1.sinaimg.cn/large/005Au8gjgy1gqa8wqamv4j30pj0szmyy.jpg" alt=""><br>3、同时确认一下应用使用麦克风的权限是否打开。</p>
+</li>
+</ol>
+<h2 id="混音处理办法"><a href="#混音处理办法" class="headerlink" title="混音处理办法"></a>混音处理办法</h2><p>wavestune，一个非常好的校准音高的插件，但是建议自己手动修音。</p>
 <p>消除气息可以直接用包络，降噪的方法目前还是不太会。</p>
-<p>压缩效果器，compressor。<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjgy1gpjdicyhhwj30l70oxgr9.jpg" alt="image"></p>
+<p>压缩效果器，compressor。<br><img src="https://tva3.sinaimg.cn/mw690/005Au8gjgy1gpjdicyhhwj30l70oxgr9.jpg" alt=""></p>
 <p>对齐不要选</p>
 <p>粘合功能仅仅只是机械的将两段音频连接，没有灵魂</p>
-<p><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjgy1gpjiyk8dlfj314y0uewm0.jpg" alt="image"></p>
-<p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjgy1gpjj5bb5ygj314u0ug10d.jpg" alt="image"></p>
-<p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjgy1gpjkq2x8hij303x05ua9w.jpg" alt="image"></p>
+<p><img src="https://tvax4.sinaimg.cn/mw690/005Au8gjgy1gpjiyk8dlfj314y0uewm0.jpg" alt=""></p>
+<p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjgy1gpjj5bb5ygj314u0ug10d.jpg" alt=""></p>
+<p><img src="https://tva4.sinaimg.cn/mw690/005Au8gjgy1gpjkq2x8hij303x05ua9w.jpg" alt=""></p>
 <p>下一首翻唱曲目选择黄龄的醉。</p>
 ]]></content>
       <categories>
@@ -466,6 +471,28 @@ nums2.length == n
         <tag>复杂网络</tag>
         <tag>拓扑识别</tag>
         <tag>同步，复杂动力学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《乌鸦》歌曲分析</title>
+    <url>/2021/05/07/%E8%AE%B8%E5%B5%A9%E5%8D%95%E6%9B%B2%E4%B9%8C%E9%B8%A6/</url>
+    <content><![CDATA[<h1 id="《乌鸦》歌曲分析"><a href="#《乌鸦》歌曲分析" class="headerlink" title="《乌鸦》歌曲分析"></a>《乌鸦》歌曲分析</h1><p>许老师第八张专辑首支发布的单曲《乌鸦》，风格安静恬淡。融入了比普通流行音乐更多的古典配器、和声、织体的元素，配器为交响乐团的弦乐组和木管组以及一些现代乐队的乐器。<span id="more"></span>前奏和主歌融入了很多离调的元素，因此初听到前奏的时候让我耳前一亮。副歌则回归正常的许式流行风格，充分照顾了大众听众的听感。个人觉得是一首非常优秀的单曲，耐听且不会觉得乏味。</p>
+<p>调式为F大调。</p>
+<h2 id="和声分析"><a href="#和声分析" class="headerlink" title="和声分析"></a>和声分析</h2><p><strong>前奏部分（0：00-0：28）：</strong><br>前奏$I_M$进入，奠定歌曲基调，五音在低音因此是第二转位。<br>然后$III_M$-$II_m$-$V_M$，虽然有调外音（$III_M$的三音），但是也是比较经典的流行和声进行。比较巧妙的是，中声部钢琴在每个和弦演奏完后，非常突出的演奏了一段升音阶，其中不乏半音阶等踩和弦外音的音阶，这就给原本普通的和弦进行增加了一丝鬼魅的色彩。</p>
+<p><strong>主歌部分（0：29-1：20）：</strong><br>和声最为丰富的一个部分。和弦进行如下<br>$I_M$-$I_m$（短暂）-$V_M$-$III_M$-$VI_m$-$IV_M$-$IV_m$-$I_M$-$VI_m$-$III_m$-$VI_m$-$II_M$-$V_M$<br>紧接着突然接了一个F小调降音阶，转为了对应关系小调。</p>
+<p><strong>副歌部分（1：21-2:13）：</strong>（注：以下和弦均未考虑色彩音如add、sus）<br>副歌部分的和弦进行回归流行<br>$I_M$-$III_M$-$VI_m$-$V_m$-$IV_M$-$V_M$-$III_m$-$II_m$-$V_M$<br>此时插入一个小调下行音阶。<br>$I_M$-$III_M$-$VI_m$-$V_m$-$IV_M$-$V_M$-$III_m$-$II_M$-$IV_m$-$I_M$。</p>
+<p>本歌曲相比于许老师之前的歌，在和声上有了一些改变。<br>首先介绍一个概念，下图是C大调：<br><img src="https://tvax1.sinaimg.cn/large/005Au8gjgy1gqaugqanwmj30he034wee.jpg" alt="C大调"><br>下图是C自然小调<br><img src="https://tva3.sinaimg.cn/large/005Au8gjgy1gqaui2kv0oj30h803ft8n.jpg" alt="C小调"><br>将其称作对应关系大小调（虽然基础乐理里面关系大小调的定义是另外的意思，但在这我还是这样称呼它）。</p>
+<p>本歌曲中多次用到了对应关系大小调进行离调处理，给歌曲增加古典色彩。<br>在C大调下，标准的和弦为$C_M$、$D_m$、$E_m$、$F_M$、$G_M$、$A_m$、$Bdim$,分别对应1-7级和弦。<br>比如主歌部分和弦进行就多次应用这种技巧，比如流行音乐常用的$III_M$和弦，比如相对而言不太常用的$I_m$、$IV_m$、$II_M$。比如时不时演奏的F小调音阶。<br>结合歌曲的主题，就可以发现许老师设计的相当巧妙。大调音阶在这首歌中相当于主流，小调音阶则是夹杂其中的非主流因素。</p>
+<h2 id="配器分析"><a href="#配器分析" class="headerlink" title="配器分析"></a>配器分析</h2><p>主要部分的配器以钢琴为主，弦乐，木管乐器为辅。<br>后期加入了简单的架子鼓和bass甚至电吉他人声和声增强厚度。</p>
+<p>编写比较出彩的乐器片段分别为<br>前奏部分（0：00-0：28）很抓耳<br>0：51处穿插的钢琴小调音阶<br>0：54-1：20弦乐双簧管长笛<br>1：19处钢琴连续的柱式和弦<br>2：13-2：26——低鸣的巴松和颇具古典色彩的钢琴<br>后面的bass编写的也还行。<br>其余乐器均属于正常水平。</p>
+<h2 id="BB"><a href="#BB" class="headerlink" title="BB"></a>BB</h2><p>很喜欢这种颇具古典色彩的音乐。上一张《寻宝游戏》里，许老师一头扎入了美式的布鲁斯里面，带着布鲁斯老炮的气质摇摇晃晃潇潇洒洒的写歌。这一张第一首则回归了世界流行音乐的鼻祖，古典音乐，写的严谨，典雅，略带忧伤。《乌鸦》是一只足够优秀的单曲，期待专辑后续的歌。</p>
+]]></content>
+      <categories>
+        <category>歌曲分析</category>
+      </categories>
+      <tags>
+        <tag>和声</tag>
+        <tag>配器</tag>
       </tags>
   </entry>
 </search>
