@@ -5,12 +5,20 @@
     <link>https://meteroad.github.io/tag/mir/</link>
       <atom:link href="https://meteroad.github.io/tag/mir/index.xml" rel="self" type="application/rss+xml" />
     <description>MIR</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 25 Apr 2020 16:19:05 +0800</lastBuildDate>
     <image>
       <url>https://meteroad.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>MIR</title>
       <link>https://meteroad.github.io/tag/mir/</link>
     </image>
+    
+    <item>
+      <title>Vocal Register Recognition</title>
+      <link>https://meteroad.github.io/project/vocal_register_recognition/</link>
+      <pubDate>Sat, 25 Apr 2020 16:19:05 +0800</pubDate>
+      <guid>https://meteroad.github.io/project/vocal_register_recognition/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Beat and downbeat tracking</title>
@@ -25,14 +33,6 @@
       <link>https://meteroad.github.io/project/mss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://meteroad.github.io/project/mss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vocal Register Recognition</title>
-      <link>https://meteroad.github.io/project/vocal_register_recognition/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://meteroad.github.io/project/vocal_register_recognition/</guid>
       <description></description>
     </item>
     
