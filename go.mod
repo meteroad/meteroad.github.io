@@ -1,4 +1,4 @@
-module github.com/wowchemy/starter-hugo-academic
+module github.com/meteroad/meteroad.github.io
 
 go 1.15
 

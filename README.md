@@ -1,1 +1,1 @@
-my personal academic blog
+Personal academic homepage for Xinlu Liu.
