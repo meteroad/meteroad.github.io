@@ -3,17 +3,217 @@
   "updatedAt": "2026-08-25",
   "papers": [
     {
+      "id": "arxiv-2608-05513",
+      "source": {
+        "type": "arxiv",
+        "id": "arxiv:2608.05513"
+      },
+      "title": "EG-VAE: A Unified Framework for Electric Guitar Tone Transfer and Removal",
+      "authors": [
+        "Yen-Tung Yeh",
+        "Yun-Ning",
+        "Hung",
+        "Yi-Hsuan Yang"
+      ],
+      "year": 2026,
+      "published": "2026-08-06",
+      "venue": "arXiv",
+      "areas": [
+        "audio-effects",
+        "representation"
+      ],
+      "summary": {
+        "en": "The paper proposes EG-VAE, a unified variational autoencoder framework for electric guitar tone transfer and removal, disentangling content and tone representations with a novel tone masking objective.",
+        "zh": "该论文提出了EG-VAE，一个统一的变分自编码器框架，用于电吉他音色迁移与去除，通过新颖的音色掩蔽目标实现内容与音色的解耦。"
+      },
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://arxiv.org/abs/2608.05513"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "agent"
+    },
+    {
+      "id": "arxiv-2608-05506",
+      "source": {
+        "type": "arxiv",
+        "id": "arxiv:2608.05506"
+      },
+      "title": "Rethinking Automatic Music Mixing as Sequential Stem Blending",
+      "authors": [
+        "Yen-Tung Yeh",
+        "Chung-Jui Chan",
+        "Yun-Ning",
+        "Hung",
+        "Yi-Hsuan Yang"
+      ],
+      "year": 2026,
+      "published": "2026-08-06",
+      "venue": "arXiv",
+      "areas": [
+        "mixing"
+      ],
+      "summary": {
+        "en": "The paper reformulates automatic music mixing as sequential stem blending, using a latent flow matching model conditioned on the submix context, and introduces a degradation-based data synthesis strategy.",
+        "zh": "该论文将自动音乐混音重新定义为顺序音轨混合，使用基于子混音上下文的潜在流匹配模型，并提出了一种基于退化的数据合成策略。"
+      },
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://arxiv.org/abs/2608.05506"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "agent"
+    },
+    {
+      "id": "arxiv-2608-05442",
+      "source": {
+        "type": "arxiv",
+        "id": "arxiv:2608.05442"
+      },
+      "title": "Diff2Mix: Controllable Music Mixing via Diffusion Models and Differentiable Audio Effects",
+      "authors": [
+        "Yisu Zong",
+        "Jinjie Shi",
+        "Joshua Reiss"
+      ],
+      "year": 2026,
+      "published": "2026-08-05",
+      "venue": "arXiv",
+      "areas": [
+        "mixing",
+        "audio-effects"
+      ],
+      "summary": {
+        "en": "The paper presents Diff2Mix, a generative automatic mixing system based on diffusion models and a differentiable mixing console, offering reference-based style control and explicit effect parameter control.",
+        "zh": "该论文提出了Diff2Mix，一个基于扩散模型和可微分混音台的生成式自动混音系统，提供基于参考的风格控制和显式效果参数控制。"
+      },
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://arxiv.org/abs/2608.05442"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "agent"
+    },
+    {
+      "id": "arxiv-2608-00667",
+      "source": {
+        "type": "arxiv",
+        "id": "arxiv:2608.00667"
+      },
+      "title": "Band-Count Dense Modal Estimation with Fixed-Frequency Differentiable Resonator Refinement",
+      "authors": [
+        "Minhui Lu",
+        "Joshua D. Reiss"
+      ],
+      "year": 2026,
+      "published": "2026-08-01",
+      "venue": "arXiv",
+      "areas": [
+        "audio-effects",
+        "evaluation"
+      ],
+      "summary": {
+        "en": "The paper proposes a band-count dense modal estimation method for plate-reverb impulse responses, using ExtraTrees regression and differentiable resonator refinement, reducing error relative to a peak-picking baseline.",
+        "zh": "该论文提出了一种用于板混响冲激响应的分频带密集模态估计方法，采用ExtraTrees回归和可微谐振器细化，与峰值拾取基线相比降低了误差。"
+      },
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://arxiv.org/abs/2608.00667"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "agent"
+    },
+    {
+      "id": "arxiv-2608-00656",
+      "source": {
+        "type": "arxiv",
+        "id": "arxiv:2608.00656"
+      },
+      "title": "Simulation-Based Plate-Reverb Parameter Estimation from a Single Impulse Response",
+      "authors": [
+        "Minhui Lu",
+        "Joshua D. Reiss"
+      ],
+      "year": 2026,
+      "published": "2026-08-01",
+      "venue": "arXiv",
+      "areas": [
+        "audio-effects",
+        "evaluation"
+      ],
+      "summary": {
+        "en": "The paper presents a simulation-trained, non-iterative estimator for plate-reverb parameter estimation from a single impulse response, using tree regressors and outperforming baselines in validation.",
+        "zh": "该论文提出了一种基于仿真训练的非迭代估计器，用于从单个冲激响应估计板混响参数，采用树回归器并在验证中优于基线。"
+      },
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://arxiv.org/abs/2608.00656"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "agent"
+    },
+    {
+      "id": "arxiv-2607-19645",
+      "source": {
+        "type": "arxiv",
+        "id": "arxiv:2607.19645"
+      },
+      "title": "Black-Box Optimization for Identifying and Inverting Audio Dynamic Range Control Effects",
+      "authors": [
+        "Haoran Sun",
+        "Dominique Fourer",
+        "Hichem Maaref"
+      ],
+      "year": 2026,
+      "published": "2026-07-22",
+      "venue": "arXiv",
+      "areas": [
+        "audio-effects"
+      ],
+      "summary": {
+        "en": "The paper formulates dynamic range compressor parameter estimation as a black-box optimization problem in a perceptually motivated feature space, achieving competitive performance without requiring differentiability.",
+        "zh": "该论文将动态范围压缩器参数估计表述为感知特征空间中的黑盒优化问题，在无需可微性的情况下实现了有竞争力的性能。"
+      },
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://arxiv.org/abs/2607.19645"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "agent"
+    },
+    {
       "id": "relfx-ismir-2026",
       "source": {
         "type": "manual",
         "id": "relfx-ismir-2026"
       },
       "title": "Beyond Dry References: Learning Relative Audio Effects Representations via Contrastive Distance Learning",
-      "authors": ["Xinlu Liu", "Huibin Lin", "Weixing Wei", "Zhenhai Yan"],
+      "authors": [
+        "Xinlu Liu",
+        "Huibin Lin",
+        "Weixing Wei",
+        "Zhenhai Yan"
+      ],
       "year": 2026,
       "published": "2026",
       "venue": "ISMIR 2026",
-      "areas": ["audio-effects", "representation", "evaluation"],
+      "areas": [
+        "audio-effects",
+        "representation",
+        "evaluation"
+      ],
       "summary": {
         "en": "Learns relative audio-effects representations from processed example pairs and evaluates their use in retrieval and effect transfer.",
         "zh": "从成对的已处理音频示例中学习相对音效表征，并评估其在检索与音效迁移中的应用。"
