@@ -16,7 +16,6 @@
           "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
           "areas": {
             "type": "array",
-            "uniqueItems": true,
             "items": {
               "type": "string",
               "enum": ["audio-effects", "representation", "mixing", "mastering", "evaluation", "spatial-audio"]

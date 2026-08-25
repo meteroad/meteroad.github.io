@@ -38,7 +38,7 @@ def validate_decision(decision: dict, candidate_ids: set[str]) -> None:
         raise ValueError(f"Codex returned an unknown sourceId: {source_id!r}")
     areas = decision.get("areas", [])
     if decision.get("decision") == "include":
-        if not areas or not set(areas).issubset(ALLOWED_AREAS):
+        if not areas or len(areas) != len(set(areas)) or not set(areas).issubset(ALLOWED_AREAS):
             raise ValueError(f"Invalid areas for {source_id}: {areas}")
         summary = decision.get("summary", {})
         for language in ("en", "zh"):

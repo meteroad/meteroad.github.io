@@ -110,6 +110,30 @@ class MergeTests(unittest.TestCase):
                 {"schemaVersion": 1, "updatedAt": "2026-08-01", "papers": []},
             )
 
+    def test_duplicate_areas_are_rejected(self):
+        candidate = discover_papers.parse_feed(ARXIV_FEED, "audio-effects")[0]
+        review = {
+            "decisions": [
+                {
+                    "sourceId": "arxiv:2608.12345",
+                    "decision": "include",
+                    "confidence": "high",
+                    "areas": ["audio-effects", "audio-effects"],
+                    "summary": {
+                        "en": "Introduces a neural audio effect intended for music production workflows.",
+                        "zh": "提出一种面向音乐制作流程的神经音频效果器。",
+                    },
+                    "reason": "The abstract states a direct production contribution.",
+                }
+            ]
+        }
+        with self.assertRaisesRegex(ValueError, "Invalid areas"):
+            merge_papers.merge_records(
+                {"candidates": [candidate]},
+                review,
+                {"schemaVersion": 1, "updatedAt": "2026-08-01", "papers": []},
+            )
+
     def test_missing_candidate_decision_is_rejected(self):
         candidate = discover_papers.parse_feed(ARXIV_FEED, "audio-effects")[0]
         with self.assertRaisesRegex(ValueError, "did not review every candidate"):
