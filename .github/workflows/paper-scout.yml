@@ -64,7 +64,7 @@ jobs:
           output-schema-file: .github/codex/schemas/paper-review.schema.json
           sandbox: read-only
           safety-strategy: drop-sudo
-          codex-args: '["--ephemeral", "--ignore-user-config"]'
+          codex-args: '["--ephemeral"]'
 
   propose:
     needs: [discover, curate]
