@@ -15,6 +15,7 @@ For every candidate:
 1. Copy sourceId exactly.
 2. Use decision "include" only for direct relevance; when uncertain, use "exclude".
 3. Use only these area identifiers: "audio-effects", "representation", "mixing", "mastering", "evaluation", "spatial-audio".
+   Assign "evaluation" only when the paper's primary contribution is a benchmark, metric, listening-test protocol, or reproducibility tool; do not assign it merely because a method reports experiments.
 4. Use confidence "high" only when the title and abstract clearly support the decision.
 5. For included papers, write one factual English sentence and one natural Chinese sentence summarizing only claims supported by the abstract.
 6. For excluded papers, return an empty areas array and empty en/zh summary strings, then briefly explain the exclusion in reason.
