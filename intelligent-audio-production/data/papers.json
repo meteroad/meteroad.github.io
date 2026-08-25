@@ -11,8 +11,7 @@
       "title": "EG-VAE: A Unified Framework for Electric Guitar Tone Transfer and Removal",
       "authors": [
         "Yen-Tung Yeh",
-        "Yun-Ning",
-        "Hung",
+        "Yun-Ning (Amy) Hung",
         "Yi-Hsuan Yang"
       ],
       "year": 2026,
@@ -45,8 +44,7 @@
       "authors": [
         "Yen-Tung Yeh",
         "Chung-Jui Chan",
-        "Yun-Ning",
-        "Hung",
+        "Yun-Ning (Amy) Hung",
         "Yi-Hsuan Yang"
       ],
       "year": 2026,
@@ -115,8 +113,7 @@
       "published": "2026-08-01",
       "venue": "arXiv",
       "areas": [
-        "audio-effects",
-        "evaluation"
+        "audio-effects"
       ],
       "summary": {
         "en": "The paper proposes a band-count dense modal estimation method for plate-reverb impulse responses, using ExtraTrees regression and differentiable resonator refinement, reducing error relative to a peak-picking baseline.",
@@ -146,8 +143,7 @@
       "published": "2026-08-01",
       "venue": "arXiv",
       "areas": [
-        "audio-effects",
-        "evaluation"
+        "audio-effects"
       ],
       "summary": {
         "en": "The paper presents a simulation-trained, non-iterative estimator for plate-reverb parameter estimation from a single impulse response, using tree regressors and outperforming baselines in validation.",
