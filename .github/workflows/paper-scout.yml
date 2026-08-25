@@ -41,8 +41,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    outputs:
-      reviewed_json: ${{ steps.codex.outputs.final-message }}
     steps:
       - name: Check out source
         uses: actions/checkout@v5
@@ -55,16 +53,23 @@ jobs:
           name: paper-candidates
           path: automation
 
-      - name: Curate with Codex
-        id: codex
-        uses: openai/codex-action@v1
+      - name: Curate with DeepSeek
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL }}
+        run: >-
+          python3 automation/curate_papers.py
+          --candidates automation/candidates.json
+          --prompt automation/prompts/curate-papers.txt
+          --output automation/reviewed-papers.json
+
+      - name: Upload curated review
+        uses: actions/upload-artifact@v4
         with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: .github/codex/prompts/curate-papers.md
-          output-schema-file: .github/codex/schemas/paper-review.schema.json
-          sandbox: read-only
-          safety-strategy: drop-sudo
-          codex-args: '["--ephemeral"]'
+          name: paper-review
+          path: automation/reviewed-papers.json
+          if-no-files-found: error
+          retention-days: 14
 
   propose:
     needs: [discover, curate]
@@ -86,10 +91,11 @@ jobs:
           name: paper-candidates
           path: automation
 
-      - name: Persist structured Codex review
-        env:
-          CODEX_REVIEW_JSON: ${{ needs.curate.outputs.reviewed_json }}
-        run: python3 automation/write_review_output.py --output automation/reviewed-papers.json
+      - name: Download curated review
+        uses: actions/download-artifact@v4
+        with:
+          name: paper-review
+          path: automation
 
       - name: Merge high-confidence records
         run: >-
@@ -127,7 +133,7 @@ jobs:
           git add intelligent-audio-production/data/papers.json
           git commit -m "Update recent intelligent audio papers"
           git push origin "$branch"
-          pr_url=$(gh pr create --base main --head "$branch" --title "Update recent intelligent audio papers" --body "Weekly Codex paper-scout update. Metadata comes from the arXiv API and passed deterministic validation before this PR was created.")
+          pr_url=$(gh pr create --base main --head "$branch" --title "Update recent intelligent audio papers" --body "Weekly AI paper-scout update. Metadata comes from the arXiv API and passed deterministic validation before this PR was created.")
           if [ "$AUTO_MERGE" = "true" ]; then
             gh pr merge --auto --squash "$pr_url"
           fi

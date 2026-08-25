@@ -9,6 +9,7 @@ AUTOMATION_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(AUTOMATION_DIR))
 
 import discover_papers  # noqa: E402
+import curate_papers  # noqa: E402
 import merge_papers  # noqa: E402
 
 
@@ -60,6 +61,41 @@ class DiscoveryTests(unittest.TestCase):
             source_ids, titles = discover_papers.existing_records(path)
             self.assertEqual(source_ids, {"local-paper"})
             self.assertIn("beyonddryreferenceslearningrelativeaudioeffects", titles)
+
+
+class CurationTests(unittest.TestCase):
+    def test_deepseek_request_uses_non_thinking_json_mode(self):
+        candidate = discover_papers.parse_feed(ARXIV_FEED, "audio-effects")[0]
+        request = curate_papers.build_request(
+            "Return JSON.",
+            {"generatedAt": "2026-08-25T10:00:00", "candidates": [candidate]},
+            "deepseek-v4-flash",
+        )
+        self.assertEqual(request["model"], "deepseek-v4-flash")
+        self.assertEqual(request["response_format"], {"type": "json_object"})
+        self.assertEqual(request["thinking"], {"type": "disabled"})
+        self.assertIn("arxiv:2608.12345", request["messages"][1]["content"])
+
+    def test_review_validation_covers_every_candidate(self):
+        candidate = discover_papers.parse_feed(ARXIV_FEED, "audio-effects")[0]
+        candidates = {"generatedAt": "2026-08-25T10:00:00", "candidates": [candidate]}
+        review = {
+            "reviewedAt": "model-generated-value-is-ignored",
+            "decisions": [
+                {
+                    "sourceId": "arxiv:2608.12345",
+                    "decision": "exclude",
+                    "confidence": "high",
+                    "areas": ["audio-effects"],
+                    "summary": {"en": "Ignored summary", "zh": "忽略的摘要"},
+                    "reason": "Not directly relevant.",
+                }
+            ],
+        }
+        validated = curate_papers.validate_review(review, candidates)
+        self.assertEqual(validated["reviewedAt"], "2026-08-25")
+        self.assertEqual(validated["decisions"][0]["areas"], [])
+        self.assertEqual(validated["decisions"][0]["summary"], {"en": "", "zh": ""})
 
 
 class MergeTests(unittest.TestCase):

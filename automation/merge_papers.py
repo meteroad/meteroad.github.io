@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge only high-confidence Codex decisions using authoritative candidate metadata."""
+"""Merge only high-confidence agent decisions using authoritative candidate metadata."""
 
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ def normalized_title(value: str) -> str:
 def validate_decision(decision: dict, candidate_ids: set[str]) -> None:
     source_id = decision.get("sourceId")
     if source_id not in candidate_ids:
-        raise ValueError(f"Codex returned an unknown sourceId: {source_id!r}")
+        raise ValueError(f"Agent returned an unknown sourceId: {source_id!r}")
     areas = decision.get("areas", [])
     if decision.get("decision") == "include":
         if not areas or len(areas) != len(set(areas)) or not set(areas).issubset(ALLOWED_AREAS):
@@ -54,12 +54,12 @@ def merge_records(candidates_data: dict, review_data: dict, papers_data: dict) -
     for decision in decisions:
         source_id = decision.get("sourceId")
         if source_id in seen_decisions:
-            raise ValueError(f"Duplicate Codex decision for {source_id}")
+            raise ValueError(f"Duplicate agent decision for {source_id}")
         seen_decisions.add(source_id)
         validate_decision(decision, set(candidates))
     if seen_decisions != set(candidates):
         missing = sorted(set(candidates) - seen_decisions)
-        raise ValueError(f"Codex did not review every candidate; missing: {missing}")
+        raise ValueError(f"Agent did not review every candidate; missing: {missing}")
 
     existing_sources = {
         paper.get("source", {}).get("id")

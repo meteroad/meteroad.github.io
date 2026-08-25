@@ -5,7 +5,6 @@ on:
     paths:
       - "intelligent-audio-production/**"
       - "automation/**"
-      - ".github/codex/**"
       - ".github/workflows/**"
   workflow_dispatch:
 
