@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-25",
+  "papers": [
+    {
+      "id": "relfx-ismir-2026",
+      "source": {
+        "type": "manual",
+        "id": "relfx-ismir-2026"
+      },
+      "title": "Beyond Dry References: Learning Relative Audio Effects Representations via Contrastive Distance Learning",
+      "authors": ["Xinlu Liu", "Huibin Lin", "Weixing Wei", "Zhenhai Yan"],
+      "year": 2026,
+      "published": "2026",
+      "venue": "ISMIR 2026",
+      "areas": ["audio-effects", "representation", "evaluation"],
+      "summary": {
+        "en": "Learns relative audio-effects representations from processed example pairs and evaluates their use in retrieval and effect transfer.",
+        "zh": "从成对的已处理音频示例中学习相对音效表征，并评估其在检索与音效迁移中的应用。"
+      },
+      "links": [
+        {
+          "label": "project",
+          "url": "https://relative-fx.github.io"
+        },
+        {
+          "label": "source",
+          "url": "https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release"
+        }
+      ],
+      "lastVerified": "2026-08-25",
+      "curation": "manual"
+    }
+  ]
+}

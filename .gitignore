@@ -1,0 +1,4 @@
+automation/candidates.json
+automation/reviewed-papers.json
+__pycache__/
+*.pyc

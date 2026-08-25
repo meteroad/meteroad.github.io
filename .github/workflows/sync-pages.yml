@@ -1,0 +1,63 @@
+name: Sync GitHub Pages branch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "404.html"
+      - "robots.txt"
+      - "intelligent-audio-production/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-github-pages
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source branch
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          path: source
+          persist-credentials: false
+
+      - name: Check out Pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: master
+          path: pages
+          fetch-depth: 0
+
+      - name: Validate source
+        working-directory: source
+        run: |
+          python3 automation/validate_data.py
+          python3 -m unittest discover -s automation/tests -v
+          node --check intelligent-audio-production/app.js
+
+      - name: Copy deployable files
+        run: |
+          rm -rf pages/intelligent-audio-production
+          cp -R source/intelligent-audio-production pages/intelligent-audio-production
+          cp source/index.html pages/index.html
+          cp source/404.html pages/404.html
+          cp source/robots.txt pages/robots.txt
+
+      - name: Update Pages branch
+        working-directory: pages
+        run: |
+          if git diff --quiet && [ -z "$(git status --short)" ]; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html 404.html robots.txt intelligent-audio-production
+          git commit -m "Deploy site from main"
+          git push origin HEAD:master

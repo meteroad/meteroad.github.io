@@ -1,0 +1,27 @@
+{
+  "lookbackDays": 35,
+  "maxResultsPerQuery": 30,
+  "maxCandidates": 60,
+  "queries": [
+    {
+      "name": "automatic-mixing",
+      "query": "(all:\"automatic mixing\" OR all:\"music mixing\" OR all:\"neural mixing\") AND (cat:eess.AS OR cat:cs.SD)"
+    },
+    {
+      "name": "audio-effects",
+      "query": "(all:\"audio effect\" OR all:\"audio effects\") AND (all:neural OR all:learning OR all:differentiable OR all:representation)"
+    },
+    {
+      "name": "mastering",
+      "query": "all:\"audio mastering\" OR all:\"automatic mastering\" OR all:\"neural mastering\""
+    },
+    {
+      "name": "differentiable-production",
+      "query": "all:\"differentiable audio\" AND (all:effect OR all:mixing OR all:production)"
+    },
+    {
+      "name": "spatial-production",
+      "query": "all:\"spatial audio\" AND (all:mixing OR all:production OR all:rendering)"
+    }
+  ]
+}
