@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "name": "RelFx",
+      "description": "Relative audio-effects representations learned from processed audio pairs.",
+      "areas": ["Audio effects", "Representation"],
+      "license": "See project terms",
+      "lastVerified": "2026-08",
+      "links": [
+        {
+          "label": "Project",
+          "url": "https://relative-fx.github.io"
+        },
+        {
+          "label": "Source",
+          "url": "https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release"
+        },
+        {
+          "label": "Checkpoint",
+          "url": "https://huggingface.co/TMEGalaxyAudioEffect/relfx-ismir2026"
+        }
+      ]
+    }
+  ]
+}

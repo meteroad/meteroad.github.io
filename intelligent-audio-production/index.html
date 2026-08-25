@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intelligent Audio Production | Xinlu Liu</title>
+    <meta name="description" content="A structured index of open resources for intelligent audio effects, representation learning, mixing, mastering, and evaluation.">
+    <meta property="og:title" content="Intelligent Audio Production">
+    <meta property="og:description" content="An open-source landscape for intelligent audio effects and music production research.">
+    <meta property="og:image" content="https://meteroad.github.io/intelligent-audio-production/assets/social-preview.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="home-link" href="../">Xinlu Liu</a>
+      <nav aria-label="Primary navigation">
+        <a href="#scope">Scope</a>
+        <a href="#projects">Projects</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Open research index</p>
+        <h1 id="page-title">Intelligent Audio Production</h1>
+        <p class="lead">A structured index of open-source projects, models, datasets, and evaluation resources for intelligent audio effects and music production.</p>
+        <ul class="scope-summary" aria-label="Current scope">
+          <li>Audio effects</li>
+          <li>Representations</li>
+          <li>Mixing</li>
+          <li>Mastering</li>
+          <li>Evaluation</li>
+        </ul>
+        <figure class="overview-visual">
+          <img src="assets/overview.png" alt="A waveform illustrating intelligent audio production">
+        </figure>
+      </section>
+
+      <section id="scope" aria-labelledby="scope-title">
+        <div class="section-heading">
+          <h2 id="scope-title">Field map</h2>
+          <p>The index follows production tasks rather than publication year. Each area will contain implementations, pretrained models, datasets, and evaluation resources where available.</p>
+        </div>
+        <div class="field-map">
+          <article>
+            <h3>Audio effects</h3>
+            <p>Modeling, estimation, control, and transfer of EQ, dynamics, distortion, reverberation, and other processors.</p>
+          </article>
+          <article>
+            <h3>Representation</h3>
+            <p>Embeddings and descriptors that capture effect transformations, production style, and perceptual attributes.</p>
+          </article>
+          <article>
+            <h3>Mixing</h3>
+            <p>Automatic, reference-guided, and controllable systems for balancing and processing multitrack music.</p>
+          </article>
+          <article>
+            <h3>Mastering</h3>
+            <p>Systems for loudness, dynamics, tonal balance, reference matching, and final-stage production.</p>
+          </article>
+          <article>
+            <h3>Evaluation</h3>
+            <p>Benchmarks, listening-test protocols, production metrics, and reproducibility tools.</p>
+          </article>
+          <article class="future-area">
+            <div class="title-line"><h3>Spatial audio</h3><span>Later</span></div>
+            <p>Spatial mixing, positioning, rendering, and immersive production will be incorporated as the index expands.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">Project index</h2>
+          <p>Entries distinguish source availability, checkpoints, licenses, and reproducibility. Projects are added after their public resources have been checked.</p>
+        </div>
+
+        <div class="index-controls">
+          <label>
+            <span>Search</span>
+            <input id="project-search" type="search" placeholder="Project or task" autocomplete="off">
+          </label>
+          <label>
+            <span>Area</span>
+            <select id="area-filter">
+              <option value="all">All areas</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Project</th>
+                <th scope="col">Area</th>
+                <th scope="col">Available</th>
+                <th scope="col">License</th>
+                <th scope="col">Verified</th>
+              </tr>
+            </thead>
+            <tbody id="project-rows">
+              <tr><td colspan="5" class="loading">Loading verified projects...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="project-count" class="project-count" aria-live="polite"></p>
+        <div class="upcoming-project">
+          <div><span>In development</span><strong>MixBench</strong></div>
+          <p>A reproducible evaluation framework for automatic music mixing. The repository link will be added when the project is publicly available.</p>
+        </div>
+        <noscript><p class="notice">JavaScript is required to render the project index.</p></noscript>
+      </section>
+
+      <section id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-heading">
+          <h2 id="roadmap-title">Roadmap</h2>
+          <p>This first version establishes the scope and data structure. The catalogue will grow through direct verification rather than unreviewed bulk collection.</p>
+        </div>
+        <ol class="roadmap-list">
+          <li><span>Now</span><strong>Build the verified landscape</strong><p>Audio effects, representations, mixing, mastering, datasets, and evaluation.</p></li>
+          <li><span>Next</span><strong>Add reproducibility details</strong><p>Environment, inference path, checkpoints, datasets, and known limitations.</p></li>
+          <li><span>Later</span><strong>Expand the production space</strong><p>Spatial audio and other production-oriented tasks.</p></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>Maintained by <a href="../">Xinlu Liu</a>.</p>
+      <p>A living resource for the audio research community.</p>
+    </footer>
+  </body>
+</html>
