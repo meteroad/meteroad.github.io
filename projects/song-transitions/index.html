@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Song Transitions and Playlist Reranking | Xinlu Liu</title>
-    <meta name="description" content="Automatic song transitions and playlist reranking for continuous music listening.">
+    <title>Automix | Xinlu Liu</title>
+    <meta name="description" content="Automix: automatic song transitions in QQ Music, with music-aware transition planning, playlist reranking, and listening evaluation.">
     <style>
       :root { color-scheme: light; --text: #1f2933; --muted: #5f6b7a; --line: #d8dee8; --link: #1b5fa7; }
       * { box-sizing: border-box; }
@@ -12,17 +12,21 @@
       main { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 56px; }
       a { color: var(--link); text-decoration: none; }
       a:hover { text-decoration: underline; }
-      a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+      a:focus-visible, summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
       nav { margin-bottom: 30px; font-size: 15px; }
       header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
       h1 { margin: 0 0 14px; font-size: 32px; line-height: 1.25; font-weight: 650; letter-spacing: 0; }
       h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.3; font-weight: 620; letter-spacing: 0; }
       p { margin: 0 0 14px; }
       header p, figcaption { color: var(--muted); }
+      .status { color: var(--text); font-size: 15px; }
       header p:last-child, section p:last-child { margin-bottom: 0; }
       figure { margin: 28px 0 0; }
-      figure img { display: block; width: min(100%, 560px); height: auto; aspect-ratio: 8 / 5; border: 1px solid var(--line); }
+      figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid var(--line); }
       figcaption { margin-top: 8px; font-size: 14px; }
+      details { margin-top: 18px; }
+      summary { width: fit-content; color: var(--link); cursor: pointer; }
+      details figure { margin-top: 16px; }
       section { padding: 28px 0; border-bottom: 1px solid var(--line); }
       section:last-child { border-bottom: 0; }
       @media (max-width: 640px) {
@@ -35,24 +39,47 @@
     <main>
       <nav aria-label="Project navigation"><a href="../../index.html#projects">&larr; All projects</a></nav>
       <header>
-        <h1>Automatic Song Transitions and Playlist Reranking</h1>
-        <p>Planning song-to-song transitions from rhythm, key, and vocal cues, and arranging tracks for smoother continuous listening.</p>
+        <h1>Automix</h1>
+        <p>Automatic song transitions and playlist reranking for continuous music listening.</p>
+        <p class="status">Available in QQ Music &middot; <a href="https://filecache.investorroom.com/mr5ir_tencentmusic/441/download/TME%20Transcript%203Q25.pdf#page=4">Official feature introduction</a></p>
       </header>
       <figure>
-        <img src="../../assets/song-transitions.png" width="960" height="600" alt="Conceptual diagram: tracks A and B overlap in a transition region; tracks A, B, and C form a playlist sequence.">
-        <figcaption>Song transitions and playlist sequencing, shown schematically.</figcaption>
+        <a href="../../assets/automix-transition-process.png" target="_blank" rel="noopener" aria-label="Open full-size Automix transition diagram">
+          <img src="../../assets/automix-transition-process.png" width="1920" height="1080" alt="Automix transition process: overlapping outgoing and incoming songs, a keylock, gain and filter chain, and tempo, gain and frequency curves.">
+        </a>
+        <figcaption>Transition timing, tempo adjustment, and gain and filter automation.</figcaption>
       </figure>
       <section>
         <h2>Song transitions</h2>
-        <p>Music analysis informs where two songs meet, how long the transition lasts, and how tempo and effects are applied.</p>
+        <p>Automix connects consecutive songs into a continuous listening experience. Rhythm, key, and vocal-boundary information guide the choice of cue points, transition duration, tempo changes, and audio effects.</p>
+        <p>Transition planning coordinates the outgoing song with the incoming one, combining tempo adjustment, gain changes, and filtering. Cue-point refinement focuses on avoiding abrupt vocal cut-offs and making the handover fit the musical structure.</p>
+        <details>
+          <summary>System overview</summary>
+          <figure>
+            <a href="../../assets/automix-system-overview.png" target="_blank" rel="noopener" aria-label="Open full-size Automix system overview">
+              <img src="../../assets/automix-system-overview.png" width="1920" height="1080" alt="Automix uses both songs' cue points, BPM and music-analysis information with a selected transition scheme to calculate transition duration, generate an effect chain, and define parameter changes.">
+            </a>
+            <figcaption>Cue points, tempo, and music-analysis inputs inform transition duration, the effect chain, and parameter changes.</figcaption>
+          </figure>
+        </details>
       </section>
       <section>
         <h2>Playlist reranking</h2>
-        <p>Track selection and ordering consider how well neighboring songs connect. This complements transition planning: choosing the next song and deciding how to reach it are two related parts of continuous listening.</p>
+        <p>A smooth playlist depends on both how songs are joined and which songs play next. Pairwise compatibility scoring supports track selection and reranking, seeking neighboring songs that offer better transition opportunities.</p>
+        <p>This complements fixed-order transition planning: one improves the handover between a given pair, while the other adjusts the sequence to improve rhythmic continuity and the overall listening experience.</p>
       </section>
       <section>
         <h2>Listening and editing</h2>
-        <p>A listening and editing workbench supports comparing transition plans, adjusting settings, and exporting configurations. Playback comparisons help guide iteration on the listening experience.</p>
+        <p>A listening and editing workbench brings music-analysis checks, transition planning, playback comparison, and configuration export into one workflow. Candidate transitions can be inspected and adjusted before evaluating their listening quality.</p>
+        <p>Comparisons include both problem cases and normal transitions, with records of the audio versions and processing settings. Listening feedback guides iteration alongside automated checks.</p>
+      </section>
+      <section>
+        <h2>Listening evaluation</h2>
+        <p>The optimized version passed an internal evaluation in October 2026. The study compared the existing online version with offline optimization candidates and included a separate cross-platform preference test.</p>
+        <p><strong>Cue-point refinement.</strong> With song order held fixed, refinement reduced inappropriate vocal cut-offs and improved transition structure and rhythmic continuity.</p>
+        <p><strong>Playlist reranking.</strong> Reranking improved overall listening experience, rhythmic continuity, perceived effects, and transition structure in the evaluated sample, with the largest score gain in rhythmic continuity.</p>
+        <p><strong>Blind preference comparison.</strong> For selected song-transition pairs from QQ Music and Apple Music, QQ Music received more preference votes. This result reflects listening preferences within the tested sample, rather than an advantage on every evaluation dimension.</p>
+        <p>These findings refer to the versions tested in the October 2026 evaluation.</p>
       </section>
     </main>
   </body>
