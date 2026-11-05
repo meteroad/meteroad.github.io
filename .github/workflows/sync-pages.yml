@@ -7,6 +7,9 @@ on:
       - "index.html"
       - "404.html"
       - "robots.txt"
+      - "assets/**"
+      - "projects/**"
+      - ".github/workflows/sync-pages.yml"
       - "intelligent-audio-production/**"
   workflow_dispatch:
 
@@ -49,6 +52,9 @@ jobs:
           cp source/index.html pages/index.html
           cp source/404.html pages/404.html
           cp source/robots.txt pages/robots.txt
+          mkdir -p pages/assets pages/projects
+          cp -R source/assets/. pages/assets/
+          cp -R source/projects/. pages/projects/
 
       - name: Update Pages branch
         working-directory: pages
@@ -58,6 +64,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html 404.html robots.txt intelligent-audio-production
+          git add index.html 404.html robots.txt intelligent-audio-production assets projects
           git commit -m "Deploy site from main"
           git push origin HEAD:master
