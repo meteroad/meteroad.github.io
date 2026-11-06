@@ -51,8 +51,9 @@
         <figcaption>Music features guide section-specific parameters that are applied during audio playback.</figcaption>
       </figure>
       <section>
-        <h2>Music understanding</h2>
-        <p>The system takes song audio as input and combines MuseLM's music understanding with the Galaxy Sound expert system to generate effect parameters. Music characteristics inform the processing, connecting content analysis with audio-effect control.</p>
+        <h2>From music understanding to executable controls</h2>
+        <p>Recognizing a song's character is not the same as specifying how to process it. Musical descriptions must be translated into parameters that an audio engine can actually apply, while preserving the relationship between each parameter set and its song section.</p>
+        <p>The design connects MuseLM's music understanding with the Galaxy Sound expert system for parameter generation, then delegates audio processing to the playback engine. This separates music analysis, control generation, and rendering instead of treating a plausible textual description as a completed audio adjustment.</p>
       </section>
       <section>
         <h2>Section-specific processing</h2>
@@ -61,7 +62,8 @@
       </section>
       <section>
         <h2>Explaining the effects</h2>
-        <p>The explanation pipeline connects section-level effect parameters with a knowledge base of listening descriptors. MuseLM combines these descriptors with its analysis of the music to describe how the processing shapes the listening experience.</p>
+        <p>An effect explanation should describe the processing plan, not just the mood of the song. The explanation pipeline maps section-level effect parameters through a knowledge base to candidate listening descriptors. MuseLM combines those descriptors with its music analysis to produce the description.</p>
+        <p>Both the audio processing and the explanation are therefore tied to the section-level parameter plan. The generated prose remains a description of intended effects, not a substitute for listening evaluation.</p>
         <figure>
           <a href="../../assets/intelligentfx-effect-explanation.png" target="_blank" rel="noopener" aria-label="Open full-size effect explanation diagram">
             <img src="../../assets/intelligentfx-effect-explanation.png" width="2392" height="1026" loading="lazy" alt="MuseLM analyzes musical characteristics while section-specific effect parameters are mapped through a knowledge base to listening descriptors. These inputs are combined to generate an explanation.">

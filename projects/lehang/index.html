@@ -51,14 +51,14 @@
         <figcaption>Driving-state information is mapped to audio effect controls on individual music stems.</figcaption>
       </figure>
       <section>
-        <h2>Driving-state control</h2>
-        <p>The system connects music playback to the driving context. It uses driving-state information and music stems as inputs, translating changes in vehicle state into audio-processing controls.</p>
-        <p>The method diagram illustrates the relationship between vehicle signals, mapping functions, and effect parameters. As the driving conditions change, the music processing responds.</p>
+        <h2>Connecting vehicle signals to musical controls</h2>
+        <p>Vehicle signals describe motion, not musical intent. The design challenge is to turn changes in speed, steering, braking, and acceleration into controls that make sense for individual musical parts rather than applying an undifferentiated change to the whole mix.</p>
+        <p>A mapping layer connects each driving signal to effect parameters on prepared music stems. This separates the interaction design from audio rendering: driving conditions change the processing of existing musical material, rather than requiring the music to be regenerated for each change in vehicle state.</p>
       </section>
       <section>
         <h2>Stem-level audio effects</h2>
         <p>Effects are controlled on individual music stems, allowing different parts of the music to respond to the driving state. The illustrated controls include gain, equalization, panning, and reverberation.</p>
-        <p>This creates an interactive listening experience in which the music changes with the journey.</p>
+        <p>The engineering work brings these mappings into a real-time C++ system and tests their behavior through in-vehicle integration and listening evaluation. The central tradeoff is responsiveness to driving actions versus continuity of the musical experience.</p>
       </section>
       <section>
         <h2>Product application and media coverage</h2>

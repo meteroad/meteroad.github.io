@@ -35,6 +35,12 @@
       .audio-examples h3 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 600; overflow-wrap: anywhere; }
       .audio-examples p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
       .audio-examples audio { display: block; width: 100%; min-width: 0; height: 54px; }
+      .evaluation-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 14px; margin: 16px 0; }
+      .evaluation-table th, .evaluation-table td { padding: 12px 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+      .evaluation-table th:first-child { width: 50%; }
+      .evaluation-table th span { display: block; color: var(--muted); font-weight: 400; margin-top: 4px; }
+      .evaluation-table caption { text-align: left; color: var(--muted); margin-bottom: 8px; font-size: 14px; }
+      .evaluation-note { color: var(--muted); font-size: 14px; }
       @media (max-width: 640px) {
         main { width: calc(100% - 28px); padding-top: 28px; }
         h1 { font-size: 27px; }
@@ -56,11 +62,13 @@
       </section>
       <section id="listen" aria-labelledby="listen-heading">
         <h2 id="listen-heading">Transition examples</h2>
+        <p>Four examples from the optimized Automix system. Focus on the handover between tracks: vocal phrasing, rhythmic continuity, and the change in level and tone.</p>
         <ul class="audio-examples">
           <li>
             <div>
               <h3 id="example-me">ME! &rarr; I Think He Knows</h3>
               <p>ME! feat. Brendon Urie of Panic! At The Disco</p>
+              <p>Listen for how the outgoing vocal phrase gives way to the incoming song during the handover.</p>
             </div>
             <audio controls preload="none" aria-labelledby="example-me">
               <source src="audio/me-to-i-think-he-knows.m4a" type="audio/mp4">
@@ -72,6 +80,7 @@
             <div>
               <h3 id="example-wake">Wake Me Up &rarr; Without You</h3>
               <p>Explicit</p>
+              <p>Listen for the relationship between the outgoing pulse and the incoming rhythm as the songs overlap.</p>
             </div>
             <audio controls preload="none" aria-labelledby="example-wake">
               <source src="audio/wake-me-up-to-without-you.m4a" type="audio/mp4">
@@ -83,6 +92,7 @@
             <div>
               <h3 id="example-without">Without You &rarr; Levels</h3>
               <p>Explicit</p>
+              <p>Listen for the balance between the outgoing vocal and the incoming rhythmic material.</p>
             </div>
             <audio controls preload="none" aria-labelledby="example-without">
               <source src="audio/without-you-to-levels.m4a" type="audio/mp4">
@@ -93,6 +103,7 @@
           <li>
             <div>
               <h3 id="example-heaven">Heaven &rarr; Face to Face</h3>
+              <p>Listen for changes in level and tone as attention shifts from one track to the next.</p>
             </div>
             <audio controls preload="none" aria-labelledby="example-heaven">
               <source src="audio/heaven-to-face-to-face.m4a" type="audio/mp4">
@@ -109,9 +120,10 @@
         <figcaption>Transition timing, tempo adjustment, and gain and filter automation.</figcaption>
       </figure>
       <section>
-        <h2>Song transitions</h2>
-        <p>Automix connects consecutive songs into a continuous listening experience. Rhythm, key, and vocal-boundary information guide the choice of cue points, transition duration, tempo changes, and audio effects.</p>
-        <p>Transition planning coordinates the outgoing song with the incoming one, combining tempo adjustment, gain changes, and filtering. Cue-point refinement focuses on avoiding abrupt vocal cut-offs and making the handover fit the musical structure.</p>
+        <h2>Coordinating the handover</h2>
+        <p>A beat-aligned transition can still cut through a vocal phrase, while a longer overlap can leave competing musical material playing together. Cue points, overlap duration, tempo adjustment, and effect automation therefore have to be considered as one transition plan.</p>
+        <p>Automix uses rhythm, key, and vocal-boundary information to generate that plan, then coordinates keylock, gain, and filtering during playback. The refinement workflow retains a stable baseline and adjusts eligible transitions; missing analysis features are handled through fallback paths rather than treated as measured zero values.</p>
+        <p>This separates two decisions: whether the available musical information supports an adjustment, and whether the rendered result actually sounds better. Candidate plans are checked through listening comparisons, not accepted solely because an automatic compatibility score increases.</p>
         <details>
           <summary>System overview</summary>
           <figure>
@@ -126,7 +138,6 @@
         <h2>Playlist reranking</h2>
         <p>A smooth playlist depends on both how songs are joined and which songs play next. Pairwise compatibility scoring supports track selection and reranking, seeking neighboring songs that offer better transition opportunities.</p>
         <p>This complements fixed-order transition planning: one improves the handover between a given pair, while the other adjusts the sequence to improve rhythmic continuity and the overall listening experience.</p>
-        <p>The October 2026 evaluation covered offline cue-point and reranking optimization candidates, separately from the existing deployed transition feature.</p>
       </section>
       <section>
         <h2>Listening and editing</h2>
@@ -135,12 +146,19 @@
       </section>
       <section>
         <h2>Listening evaluation</h2>
-        <p>The optimized version passed an internal evaluation in October 2026. The study compared the existing online version with offline optimization candidates and included a separate cross-platform preference test.</p>
-        <p><strong>Cue-point refinement.</strong> Across 48 fixed-order song pairs, refinement reduced inappropriate vocal cut-offs and improved transition structure and rhythmic continuity. The proportion rated structurally reasonable increased from 70.83% to 95.83%.</p>
-        <p><strong>Playlist reranking.</strong> Across 28 combinations, reranking improved overall listening experience, rhythmic continuity, perceived effects, and transition structure. Overall experience scores increased from 3.65 to 3.99, with the largest score gain in rhythmic continuity (3.54 to 3.95).</p>
+        <p>An internal listening evaluation in October 2026 compared the original system with the optimized system and included a separate cross-platform preference test.</p>
+        <table class="evaluation-table" aria-describedby="evaluation-method">
+          <caption>October 2026 internal evaluation: original versus optimized results</caption>
+          <thead><tr><th scope="col">Evaluation</th><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Reasonable structure<span>Fixed order, 48 pairs</span></th><td>70.83%</td><td>95.83%</td></tr>
+            <tr><th scope="row">Overall experience<span>Reranking, 28 sets</span></th><td>3.65 / 5</td><td>3.99 / 5</td></tr>
+            <tr><th scope="row">Rhythmic continuity<span>Same 28 sets</span></th><td>3.54 / 5</td><td>3.95 / 5</td></tr>
+          </tbody>
+        </table>
+        <p id="evaluation-method" class="evaluation-note">Experience and rhythmic continuity are rated on a five-point scale (higher is better). Structure percentages reflect the internal review of transition structure. Fixed-order and reranking results come from separate sample sets.</p>
         <p><strong>Blind preference comparison.</strong> A separate questionnaire compared 15 selected song-transition pairs: eight selected from QQ Music and seven from Apple Music. Responses from 32 participants produced 465 valid preference choices: 220 for QQ Music (about 47%), 174 for Apple Music (about 37%), and 71 ties (about 15%). These are pooled choices across pairs, not counts of independent participants.</p>
-        <p>The preference result applies to this selected sample and does not imply superiority on every dimension. The report identifies the preference questionnaire as blind; the fixed-order and reranking evaluations are not described as blind. No statistical-significance claim is made.</p>
-        <p>These findings refer to the versions tested in the October 2026 evaluation.</p>
+        <p>The blind preference result reflects the selected song pairs and versions tested in October 2026, rather than an advantage on every evaluation dimension.</p>
       </section>
     </main>
     <script>
