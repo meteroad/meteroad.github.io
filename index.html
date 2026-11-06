@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Xinlu Liu</title>
-    <meta name="description" content="Xinlu Liu works on intelligent audio effects, automatic mixing, and music audio AI.">
+    <meta name="description" content="Xinlu Liu is a music and audio AI researcher at Tencent Music Entertainment, leading intelligent audio and interactive music projects from research to product deployment.">
     <style>
       :root {
         color-scheme: light;
@@ -134,6 +134,12 @@
         margin-bottom: 0;
       }
 
+      .project-meta {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
       a:focus-visible {
         outline: 2px solid var(--link);
         outline-offset: 4px;
@@ -193,7 +199,7 @@
     <main>
       <header>
         <h1>Xinlu Liu</h1>
-        <p class="subtitle">Music and audio AI researcher working on intelligent audio effects and automatic mixing.</p>
+        <p class="subtitle">Music and audio AI researcher at Tencent Music Entertainment.</p>
         <nav aria-label="Primary navigation">
           <a href="#updates">Updates</a>
           <a href="#projects">Projects</a>
@@ -205,14 +211,15 @@
 
       <section id="about">
         <h2>About</h2>
-        <p>I work on intelligent audio effects and automatic mixing systems.</p>
-        <p>My current work focuses on learning representations for audio effects, controlling effect transformations from audio examples, and building evaluation tools for music production workflows.</p>
+        <p>I am a music and audio AI researcher at Tencent Music Entertainment, working on intelligent audio processing and interactive music systems.</p>
+        <p>I lead projects from problem formulation and algorithm design through system development, evaluation, and product deployment. My work spans audio effects representation learning, automatic song transitions, music-aware sound enhancement, natural-language audio control, and driving-adaptive music.</p>
+        <p>I combine research with hands-on engineering to turn new ideas into practical listening experiences.</p>
       </section>
 
       <section id="updates">
         <h2>Recent Updates</h2>
         <ul>
-          <li><strong>RelFx / FxEncoder Eval</strong> was accepted to <strong>ISMIR 2026</strong>.</li>
+          <li><strong>RelFx</strong> was accepted to <strong>ISMIR 2026</strong>.</li>
           <li>The ISMIR project page is available at <a href="https://relative-fx.github.io">relative-fx.github.io</a>.</li>
           <li>The source release is available at <a href="https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release">TMEGalaxyAudioEffect/relfx-ismir2026-release</a>.</li>
         </ul>
@@ -221,13 +228,18 @@
       <section id="projects">
         <h2>Selected Projects</h2>
         <article class="project project-feature">
-          <a class="project-image" href="projects/intelligentfx/index.html" aria-label="intelligentFx: project details">
-            <img src="assets/intelligentfx-segment-rendering.png" width="1600" height="844" alt="Audio features guide section-specific effect parameters, followed by audio processing and continuous playback.">
+          <a class="project-image" href="https://relative-fx.github.io" aria-label="RelFx: research project page">
+            <img src="assets/relfx-architecture.png" width="1400" height="1081" alt="RelFx architecture: paired audio branches exchange features through cross-attention, then combine through Diff-Gate fusion and projection.">
           </a>
           <div>
-            <h3><a href="projects/intelligentfx/index.html">intelligentFx</a></h3>
-            <p>AI-powered sound effects, deployed in QQ Music. MuseLM's music understanding and the Galaxy Sound expert system tailor audio processing to different sections of a song.</p>
-            <p class="links"><a href="projects/intelligentfx/index.html">Project details</a></p>
+            <h3><a href="https://relative-fx.github.io">RelFx</a></h3>
+            <p class="project-meta">First Author &middot; ISMIR 2026</p>
+            <p>Learning relative audio effect representations from paired audio, supporting effect retrieval and reference-guided audio processing.</p>
+            <p class="links">
+              <a href="https://relative-fx.github.io">Project page</a>
+              <a href="https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release">Code</a>
+              <a href="https://huggingface.co/TMEGalaxyAudioEffect/relfx-ismir2026">Model</a>
+            </p>
           </div>
         </article>
         <article class="project project-feature">
@@ -236,8 +248,20 @@
           </a>
           <div>
             <h3><a href="projects/song-transitions/index.html">Automix</a></h3>
-            <p>Automatic song transitions, available in QQ Music. Music-aware transition planning and playlist reranking help connect songs for smoother continuous listening.</p>
+            <p class="project-meta">Project Lead &middot; Song transitions deployed in QQ Music</p>
+            <p>Music-aware transition planning and audio-effect control for continuous listening, with further cue-point and playlist-reranking optimization evaluated offline.</p>
             <p class="links"><a href="projects/song-transitions/index.html">Project details</a></p>
+          </div>
+        </article>
+        <article class="project project-feature">
+          <a class="project-image" href="projects/intelligentfx/index.html" aria-label="intelligentFx: project details">
+            <img src="assets/intelligentfx-segment-rendering.png" width="1600" height="844" alt="Audio features guide section-specific effect parameters, followed by audio processing and continuous playback.">
+          </a>
+          <div>
+            <h3><a href="projects/intelligentfx/index.html">intelligentFx</a></h3>
+            <p class="project-meta">Project Lead, Audio Effects &middot; Deployed in QQ Music</p>
+            <p>MuseLM's music understanding and the Galaxy Sound expert system tailor audio processing to different sections of a song.</p>
+            <p class="links"><a href="projects/intelligentfx/index.html">Project details</a></p>
           </div>
         </article>
         <article class="project project-feature">
@@ -246,7 +270,8 @@
           </a>
           <div>
             <h3><a href="projects/lehang/index.html" lang="zh-CN">臻品乐航</a></h3>
-            <p>An in-car music system that adapts stem-level audio effects to driving conditions, with publicly reported deployment by QQ Music and ZEEKR on the ZEEKR 001.</p>
+            <p class="project-meta">Project Lead &middot; Deployed on ZEEKR 001 with QQ Music</p>
+            <p>Driving-adaptive music: an in-car system that maps driving conditions to stem-level audio effects, making music respond to the journey.</p>
             <p class="links"><a href="projects/lehang/index.html">Project details</a></p>
           </div>
         </article>
@@ -256,19 +281,11 @@
           </a>
           <div>
             <h3><a href="projects/audio-tuning/index.html">Natural-Language Audio Tuning</a></h3>
-            <p>A research and engineering prototype that turns everyday language into audio-effect adjustments, with multi-turn editing, manual controls, and before-and-after listening.</p>
+            <p class="project-meta">Project Lead &middot; Research &amp; engineering prototype</p>
+            <p>Turns everyday language into audio-effect adjustments, with multi-turn editing, manual controls, and before-and-after listening.</p>
             <p class="links"><a href="projects/audio-tuning/index.html">Project details</a></p>
           </div>
         </article>
-        <div class="project">
-          <h3>RelFx / FxEncoder Eval</h3>
-          <p>Relative audio effect representation learning for retrieving, measuring, and controlling effect transformations from paired audio.</p>
-          <p class="links">
-            <a href="https://relative-fx.github.io">Project page</a>
-            <a href="https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release">Code</a>
-            <a href="https://huggingface.co/TMEGalaxyAudioEffect/relfx-ismir2026">Model</a>
-          </p>
-        </div>
         <div class="project">
           <h3>Intelligent Audio Production Resources</h3>
           <p>A structured index of open resources for intelligent audio effects, representations, mixing, mastering, and evaluation.</p>

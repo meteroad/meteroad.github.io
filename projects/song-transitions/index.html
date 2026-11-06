@@ -41,8 +41,12 @@
       <header>
         <h1>Automix</h1>
         <p>Automatic song transitions and playlist reranking for continuous music listening.</p>
-        <p class="status">Available in QQ Music &middot; <a href="https://filecache.investorroom.com/mr5ir_tencentmusic/441/download/TME%20Transcript%203Q25.pdf#page=4">Official feature introduction</a></p>
+        <p class="status">Project Lead &middot; Song transitions deployed in QQ Music &middot; <a href="https://filecache.investorroom.com/mr5ir_tencentmusic/441/download/TME%20Transcript%203Q25.pdf#page=4">Official feature introduction</a></p>
       </header>
+      <section aria-labelledby="my-role">
+        <h2 id="my-role">My role</h2>
+        <p>I lead the Automix project, owning the overall technical architecture, core algorithms, and ongoing development across transition planning, audio-effect control, and playlist reranking. I drive evaluation and product integration, collaborating with playback engineers to bring the system into QQ Music.</p>
+      </section>
       <figure>
         <a href="../../assets/automix-transition-process.png" target="_blank" rel="noopener" aria-label="Open full-size Automix transition diagram">
           <img src="../../assets/automix-transition-process.png" width="1920" height="1080" alt="Automix transition process: overlapping outgoing and incoming songs, a keylock, gain and filter chain, and tempo, gain and frequency curves.">
@@ -67,6 +71,7 @@
         <h2>Playlist reranking</h2>
         <p>A smooth playlist depends on both how songs are joined and which songs play next. Pairwise compatibility scoring supports track selection and reranking, seeking neighboring songs that offer better transition opportunities.</p>
         <p>This complements fixed-order transition planning: one improves the handover between a given pair, while the other adjusts the sequence to improve rhythmic continuity and the overall listening experience.</p>
+        <p>The October 2026 evaluation covered offline cue-point and reranking optimization candidates, separately from the existing deployed transition feature.</p>
       </section>
       <section>
         <h2>Listening and editing</h2>
@@ -76,9 +81,10 @@
       <section>
         <h2>Listening evaluation</h2>
         <p>The optimized version passed an internal evaluation in October 2026. The study compared the existing online version with offline optimization candidates and included a separate cross-platform preference test.</p>
-        <p><strong>Cue-point refinement.</strong> With song order held fixed, refinement reduced inappropriate vocal cut-offs and improved transition structure and rhythmic continuity.</p>
-        <p><strong>Playlist reranking.</strong> Reranking improved overall listening experience, rhythmic continuity, perceived effects, and transition structure in the evaluated sample, with the largest score gain in rhythmic continuity.</p>
-        <p><strong>Blind preference comparison.</strong> For selected song-transition pairs from QQ Music and Apple Music, QQ Music received more preference votes. This result reflects listening preferences within the tested sample, rather than an advantage on every evaluation dimension.</p>
+        <p><strong>Cue-point refinement.</strong> Across 48 fixed-order song pairs, refinement reduced inappropriate vocal cut-offs and improved transition structure and rhythmic continuity. The proportion rated structurally reasonable increased from 70.83% to 95.83%.</p>
+        <p><strong>Playlist reranking.</strong> Across 28 combinations, reranking improved overall listening experience, rhythmic continuity, perceived effects, and transition structure. Overall experience scores increased from 3.65 to 3.99, with the largest score gain in rhythmic continuity (3.54 to 3.95).</p>
+        <p><strong>Blind preference comparison.</strong> A separate questionnaire compared 15 selected song-transition pairs: eight selected from QQ Music and seven from Apple Music. Responses from 32 participants produced 465 valid preference choices: 220 for QQ Music (about 47%), 174 for Apple Music (about 37%), and 71 ties (about 15%). These are pooled choices across pairs, not counts of independent participants.</p>
+        <p>The preference result applies to this selected sample and does not imply superiority on every dimension. The report identifies the preference questionnaire as blind; the fixed-order and reranking evaluations are not described as blind. No statistical-significance claim is made.</p>
         <p>These findings refer to the versions tested in the October 2026 evaluation.</p>
       </section>
     </main>
