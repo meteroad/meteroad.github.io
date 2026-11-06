@@ -29,9 +29,16 @@
       details figure { margin-top: 16px; }
       section { padding: 28px 0; border-bottom: 1px solid var(--line); }
       section:last-child { border-bottom: 0; }
+      .audio-examples { list-style: none; padding: 0; margin: 0; }
+      .audio-examples li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: 12px 24px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+      .audio-examples li:last-child { padding-bottom: 0; border-bottom: 0; }
+      .audio-examples h3 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 600; overflow-wrap: anywhere; }
+      .audio-examples p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+      .audio-examples audio { display: block; width: 100%; min-width: 0; height: 54px; }
       @media (max-width: 640px) {
         main { width: calc(100% - 28px); padding-top: 28px; }
         h1 { font-size: 27px; }
+        .audio-examples li { grid-template-columns: minmax(0, 1fr); }
       }
     </style>
   </head>
@@ -46,6 +53,54 @@
       <section aria-labelledby="my-role">
         <h2 id="my-role">My role</h2>
         <p>I lead the Automix project, owning the overall technical architecture, core algorithms, and ongoing development across transition planning, audio-effect control, and playlist reranking. I drive evaluation and product integration, collaborating with playback engineers to bring the system into QQ Music.</p>
+      </section>
+      <section id="listen" aria-labelledby="listen-heading">
+        <h2 id="listen-heading">Transition examples</h2>
+        <ul class="audio-examples">
+          <li>
+            <div>
+              <h3 id="example-me">ME! &rarr; I Think He Knows</h3>
+              <p>ME! feat. Brendon Urie of Panic! At The Disco</p>
+            </div>
+            <audio controls preload="none" aria-labelledby="example-me">
+              <source src="audio/me-to-i-think-he-knows.m4a" type="audio/mp4">
+              <source src="audio/me-to-i-think-he-knows.mp3" type="audio/mpeg">
+              <a href="audio/me-to-i-think-he-knows.m4a">ME! to I Think He Knows audio</a>
+            </audio>
+          </li>
+          <li>
+            <div>
+              <h3 id="example-wake">Wake Me Up &rarr; Without You</h3>
+              <p>Explicit</p>
+            </div>
+            <audio controls preload="none" aria-labelledby="example-wake">
+              <source src="audio/wake-me-up-to-without-you.m4a" type="audio/mp4">
+              <source src="audio/wake-me-up-to-without-you.mp3" type="audio/mpeg">
+              <a href="audio/wake-me-up-to-without-you.m4a">Wake Me Up to Without You audio</a>
+            </audio>
+          </li>
+          <li>
+            <div>
+              <h3 id="example-without">Without You &rarr; Levels</h3>
+              <p>Explicit</p>
+            </div>
+            <audio controls preload="none" aria-labelledby="example-without">
+              <source src="audio/without-you-to-levels.m4a" type="audio/mp4">
+              <source src="audio/without-you-to-levels.mp3" type="audio/mpeg">
+              <a href="audio/without-you-to-levels.m4a">Without You to Levels audio</a>
+            </audio>
+          </li>
+          <li>
+            <div>
+              <h3 id="example-heaven">Heaven &rarr; Face to Face</h3>
+            </div>
+            <audio controls preload="none" aria-labelledby="example-heaven">
+              <source src="audio/heaven-to-face-to-face.m4a" type="audio/mp4">
+              <source src="audio/heaven-to-face-to-face.mp3" type="audio/mpeg">
+              <a href="audio/heaven-to-face-to-face.m4a">Heaven to Face to Face audio</a>
+            </audio>
+          </li>
+        </ul>
       </section>
       <figure>
         <a href="../../assets/automix-transition-process.png" target="_blank" rel="noopener" aria-label="Open full-size Automix transition diagram">
@@ -88,5 +143,15 @@
         <p>These findings refer to the versions tested in the October 2026 evaluation.</p>
       </section>
     </main>
+    <script>
+      const examples = document.querySelectorAll('.audio-examples audio');
+      for (const current of examples) {
+        current.addEventListener('play', () => {
+          for (const other of examples) {
+            if (other !== current) other.pause();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
