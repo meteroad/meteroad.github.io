@@ -53,6 +53,8 @@
         font-size: 19px;
       }
 
+      .contact { margin: 12px 0 0; font-size: 15px; }
+
       nav {
         display: flex;
         flex-wrap: wrap;
@@ -200,6 +202,7 @@
       <header>
         <h1>Xinlu Liu</h1>
         <p class="subtitle">Music and audio AI researcher at Tencent Music Entertainment.</p>
+        <p class="contact"><a href="mailto:fayelliu@163.com">Email</a> &middot; <a href="https://scholar.google.com/citations?user=VdGyoCsAAAAJ&amp;hl=zh-CN">Google Scholar</a> &middot; <a href="https://github.com/meteroad">GitHub</a></p>
         <nav aria-label="Primary navigation">
           <a href="#projects">Projects</a>
           <a href="#publications">Publications</a>
@@ -212,6 +215,7 @@
         <p>I am a music and audio AI researcher at Tencent Music Entertainment, working on intelligent audio processing and interactive music systems.</p>
         <p>I lead projects from problem formulation and algorithm design through system development, evaluation, and product deployment. My work spans audio effects representation learning, automatic song transitions, music-aware sound enhancement, natural-language audio control, and driving-adaptive music.</p>
         <p>I combine research with hands-on engineering to turn new ideas into practical listening experiences.</p>
+        <p>I hold a master's degree from Fudan University.</p>
       </section>
 
       <section id="updates">
@@ -219,7 +223,7 @@
         <ul>
           <li><strong>RelFx</strong> was accepted to <strong>ISMIR 2026</strong>.</li>
           <li>The ISMIR project page is available at <a href="https://relative-fx.github.io">relative-fx.github.io</a>.</li>
-          <li>The source release is available at <a href="https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release">TMEGalaxyAudioEffect/relfx-ismir2026-release</a>.</li>
+          <li>The source release is available at <a href="https://github.com/TMEGalaxyAudioEffect/relfx">TMEGalaxyAudioEffect/relfx</a>.</li>
         </ul>
       </section>
 
@@ -232,10 +236,11 @@
           <div>
             <h3><a href="https://relative-fx.github.io">RelFx</a></h3>
             <p class="project-meta">First Author &middot; ISMIR 2026</p>
-            <p>Learning relative audio effect representations from paired audio, supporting effect retrieval and reference-guided audio processing.</p>
+            <p>Learning how audio effects change between recordings, rather than encoding one recording's absolute effect state. Representation training does not require dry reference recordings.</p>
             <p class="links">
               <a href="https://relative-fx.github.io">Project page</a>
-              <a href="https://github.com/TMEGalaxyAudioEffect/relfx-ismir2026-release">Code</a>
+              <a href="https://arxiv.org/abs/2608.10573">Paper</a>
+              <a href="https://github.com/TMEGalaxyAudioEffect/relfx">Code</a>
               <a href="https://huggingface.co/TMEGalaxyAudioEffect/relfx-ismir2026">Model</a>
             </p>
           </div>
@@ -247,7 +252,7 @@
           <div>
             <h3><a href="projects/song-transitions/index.html">Automix</a></h3>
             <p class="project-meta">Project Lead &middot; Song transitions deployed in QQ Music</p>
-            <p>Music-aware transition planning and audio-effect control for continuous listening, with further cue-point and playlist-reranking optimization evaluated offline.</p>
+            <p>Music-aware transition planning and audio-effect control for continuous listening, with playlist reranking to find better song-to-song matches.</p>
             <p class="links"><a href="projects/song-transitions/index.html">Project details</a><a href="projects/song-transitions/index.html#listen">Listen</a></p>
           </div>
         </article>
@@ -308,6 +313,7 @@
             <strong>Beyond Dry References: Learning Relative Audio Effects Representations via Contrastive Distance Learning</strong><br>
             <span class="authors"><strong>Xinlu Liu</strong>, Huibin Lin, Weixing Wei, Zhenhai Yan.</span><br>
             <span class="venue">ISMIR 2026.</span>
+            <a href="https://arxiv.org/abs/2608.10573">Paper</a>
             <a href="https://relative-fx.github.io">Project</a>
           </li>
           <li>
@@ -333,13 +339,13 @@
             <strong>XBeat: A Hybrid CNN-Transformer Model for Beat and Downbeat Tracking</strong><br>
             <span class="authors">YiFei Wu, <strong>Xinlu Liu</strong>, Xu Gan, Wei Li.</span><br>
             <span class="venue">CSMT 2023, Springer LNEE 1268.</span>
-            <a href="https://link.springer.com/book/10.1007/978-981-97-7962-8">Proceedings</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-981-97-7962-8_5">Paper</a>
           </li>
           <li>
             <strong>DiffTimb: Diffusion Models for Many-to-Many Timbre Transfer</strong><br>
             <span class="authors">Xu Gan, Yifei Wu, <strong>Xinlu Liu</strong>, Ruilei Duan, Wei Li.</span><br>
             <span class="venue">CSMT 2023, Springer LNEE 1268.</span>
-            <a href="https://link.springer.com/book/10.1007/978-981-97-7962-8">Proceedings</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-981-97-7962-8_10">Paper</a>
           </li>
         </ul>
       </section>
@@ -347,6 +353,8 @@
       <section id="links">
         <h2>Links</h2>
         <p class="links">
+          <a href="mailto:fayelliu@163.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=VdGyoCsAAAAJ&amp;hl=zh-CN">Google Scholar</a>
           <a href="https://github.com/meteroad">GitHub</a>
           <a href="https://github.com/TMEGalaxyAudioEffect">TMEGalaxyAudioEffect</a>
         </p>

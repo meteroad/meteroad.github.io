@@ -51,13 +51,13 @@
         <figcaption>Early internal prototype: conversational tuning and the editable effect chain.</figcaption>
       </figure>
       <section>
-        <h2>From language to audio effects</h2>
-        <p>The prototype lets listeners describe a desired change in everyday language while also supporting explicit parameter requests. A large language model combines the text request with the current effect-chain state to generate structured operations.</p>
-        <p>The system applies those operations to the effect chain and returns the actual settings and processed audio. Listeners can hear the change, compare it with the original, and describe what they would like to adjust next.</p>
+        <h2>Turning subjective requests into operations</h2>
+        <p>Everyday listening descriptions do not uniquely specify an effect or parameter value. A follow-up request also depends on what is already active. The prototype combines the user's text with the current effect-chain state to generate structured editing operations, while still supporting explicit parameter requests.</p>
+        <p>The execution layer applies those operations and returns the actual settings and processed audio. Listening closes the loop: the user compares the result with the original and refines the request, rather than relying on a fluent model response as evidence that the sound is correct.</p>
       </section>
       <section>
-        <h2>Continuous tuning</h2>
-        <p>Follow-up requests build on the current effect chain rather than starting from scratch. Execution results are carried into subsequent turns, so users can refine the same setup through conversation.</p>
+        <h2>Keeping multi-turn edits consistent</h2>
+        <p>A conversation can drift if the model assumes that its proposed changes were applied exactly as written. The system carries actual execution results into subsequent turns, so follow-up requests operate on the current effect chain rather than an imagined state or a newly generated preset.</p>
         <p>Manual parameter controls and comparisons with the original audio complement the dialogue, letting users explore changes in tone and ambience through listening.</p>
       </section>
       <section>
