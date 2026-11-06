@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>intelligentFx | Xinlu Liu</title>
+    <meta name="description" content="intelligentFx: AI-powered sound effects for QQ Music, combining music understanding with section-specific audio processing.">
+    <style>
+      :root { color-scheme: light; --text: #1f2933; --muted: #5f6b7a; --line: #d8dee8; --link: #1b5fa7; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #fff; color: var(--text); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      main { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 56px; }
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+      nav { margin-bottom: 30px; font-size: 15px; }
+      header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+      h1 { margin: 0 0 14px; font-size: 32px; line-height: 1.25; font-weight: 650; letter-spacing: 0; }
+      h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.3; font-weight: 620; letter-spacing: 0; }
+      p { margin: 0 0 14px; }
+      header p, figcaption { color: var(--muted); }
+      .status { color: var(--text); font-size: 15px; }
+      header p:last-child, section p:last-child { margin-bottom: 0; }
+      figure { margin: 28px 0 0; }
+      figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+      figcaption { margin-top: 8px; font-size: 14px; }
+      section { padding: 28px 0; border-bottom: 1px solid var(--line); }
+      section:last-child { border-bottom: 0; }
+      @media (max-width: 640px) {
+        main { width: calc(100% - 28px); padding-top: 28px; }
+        h1 { font-size: 27px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Project navigation"><a href="../../index.html#projects">&larr; All projects</a></nav>
+      <header>
+        <h1>intelligentFx</h1>
+        <p>AI-powered sound effects for QQ Music, adapting audio processing to different sections of a song.</p>
+        <p class="status">Available in QQ Music</p>
+      </header>
+      <figure>
+        <a href="../../assets/intelligentfx-segment-rendering.png" target="_blank" rel="noopener" aria-label="Open full-size section-specific audio processing diagram">
+          <img src="../../assets/intelligentfx-segment-rendering.png" width="1600" height="844" alt="Audio features feed an effect-parameter generation algorithm. Separate parameter sets control four song sections before post-processing produces a complete audio stream.">
+        </a>
+        <figcaption>Music features guide section-specific parameters that are applied during audio playback.</figcaption>
+      </figure>
+      <section>
+        <h2>Music understanding</h2>
+        <p>The system takes song audio as input and combines MuseLM's music understanding with the Galaxy Sound expert system to generate effect parameters. Music characteristics inform the processing, connecting content analysis with audio-effect control.</p>
+      </section>
+      <section>
+        <h2>Section-specific processing</h2>
+        <p>Instead of applying one fixed setting throughout a song, intelligentFx generates parameters for individual sections. Verses and choruses can receive different treatments, allowing the listening experience to follow changes in the music.</p>
+        <p>The playback engine applies these parameters through the audio-processing chain, followed by post-processing to produce the complete audio stream.</p>
+      </section>
+      <section>
+        <h2>Explaining the effects</h2>
+        <p>The explanation pipeline connects section-level effect parameters with a knowledge base of listening descriptors. MuseLM combines these descriptors with its analysis of the music to describe how the processing shapes the listening experience.</p>
+        <figure>
+          <a href="../../assets/intelligentfx-effect-explanation.png" target="_blank" rel="noopener" aria-label="Open full-size effect explanation diagram">
+            <img src="../../assets/intelligentfx-effect-explanation.png" width="2392" height="1026" loading="lazy" alt="MuseLM analyzes musical characteristics while section-specific effect parameters are mapped through a knowledge base to listening descriptors. These inputs are combined to generate an explanation.">
+          </a>
+          <figcaption>Effect explanation workflow. The text on the right illustrates a generated description, rather than an evaluation result.</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Product application</h2>
+        <p>Deployed in QQ Music. December 2024 launch coverage describes the introduction of AI-powered sound effects in QQ Music 14.0, including different treatments for verses and choruses. <a href="https://www.pingwest.com/w/301218">Launch coverage, December 25, 2024</a>.</p>
+        <p>Tencent Music's 2024 ESG report describes the combination of MuseLM and the Galaxy Sound expert system for song analysis and effect-parameter generation. <a href="https://filecache.investorroom.com/mr5ir_tencentmusic/428/2024%20ESG%20Report.pdf#page=16">TME 2024 ESG Report, page 15</a>.</p>
+      </section>
+    </main>
+  </body>
+</html>
