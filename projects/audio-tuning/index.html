@@ -12,7 +12,7 @@
       main { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 56px; }
       a { color: var(--link); text-decoration: none; }
       a:hover { text-decoration: underline; }
-      a:focus-visible, summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+      a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
       nav { margin-bottom: 30px; font-size: 15px; }
       header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
       h1 { margin: 0 0 14px; font-size: 32px; line-height: 1.25; font-weight: 650; letter-spacing: 0; }
@@ -24,10 +24,6 @@
       figure { margin: 28px 0 0; }
       figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
       figcaption { margin-top: 8px; font-size: 14px; }
-      details { margin-top: 18px; }
-      summary { width: fit-content; color: var(--link); cursor: pointer; }
-      details p { margin-top: 16px; }
-      details figure { margin-top: 16px; }
       section { padding: 28px 0; border-bottom: 1px solid var(--line); }
       section:last-child { border-bottom: 0; }
       @media (max-width: 640px) {
@@ -59,22 +55,6 @@
         <h2>Continuous tuning</h2>
         <p>Follow-up requests build on the current effect chain rather than starting from scratch. Execution results are carried into subsequent turns, so users can refine the same setup through conversation.</p>
         <p>Manual parameter controls and comparisons with the original audio complement the dialogue, letting users explore changes in tone and ambience through listening.</p>
-        <details>
-          <summary>Early interaction exploration</summary>
-          <p>An earlier guided interface explored perceptual controls for bass character and soundstage width alongside free-form conversation.</p>
-          <figure>
-            <a href="../../assets/audio-tuning-guided-bass.png" target="_blank" rel="noopener" aria-label="Open full-size guided bass tuning screenshot">
-              <img src="../../assets/audio-tuning-guided-bass.png" width="1960" height="1228" alt="Historical guided tuning interface with a slider between clear, transparent bass and a fuller, richer character.">
-            </a>
-            <figcaption>Early guided prototype: adjusting bass character.</figcaption>
-          </figure>
-          <figure>
-            <a href="../../assets/audio-tuning-guided-width.png" target="_blank" rel="noopener" aria-label="Open full-size guided soundstage tuning screenshot">
-              <img src="../../assets/audio-tuning-guided-width.png" width="1134" height="648" alt="Historical soundstage-width control ranging from focused and compact to wide and natural.">
-            </a>
-            <figcaption>Early guided prototype: exploring soundstage width.</figcaption>
-          </figure>
-        </details>
       </section>
       <section>
         <h2>Consistent parameter units</h2>
