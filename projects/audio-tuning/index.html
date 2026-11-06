@@ -38,8 +38,12 @@
       <header>
         <h1>Natural-Language Audio Tuning</h1>
         <p>Turning everyday language into executable audio-effect adjustments, with iterative editing and before-and-after listening.</p>
-        <p class="status">Research &amp; engineering prototype &middot; Internal demonstrations and staged validation</p>
+        <p class="status">Project Lead &middot; Research &amp; engineering prototype</p>
       </header>
+      <section aria-labelledby="my-role">
+        <h2 id="my-role">My role</h2>
+        <p>I lead the design and development of a natural-language audio tuning system, covering problem formulation, technical architecture, and prototype implementation. I build the workflow connecting language understanding, iterative effect-chain editing, parameter execution, and listening feedback.</p>
+      </section>
       <figure>
         <a href="../../assets/audio-tuning-conversation.png" target="_blank" rel="noopener" aria-label="Open full-size conversational tuning screenshot">
           <img src="../../assets/audio-tuning-conversation.png" width="1956" height="1228" alt="An early desktop prototype with a tuning conversation on the left and editable EQ and reverb nodes on the right.">
@@ -49,7 +53,7 @@
       <section>
         <h2>From language to audio effects</h2>
         <p>The prototype lets listeners describe a desired change in everyday language while also supporting explicit parameter requests. A large language model combines the text request with the current effect-chain state to generate structured operations.</p>
-        <p>A parameter-conversion layer connects those operations to an audio-processing library. The interface returns the applied settings and processed audio, making the result available for inspection and listening.</p>
+        <p>The system applies those operations to the effect chain and returns the actual settings and processed audio. Listeners can hear the change, compare it with the original, and describe what they would like to adjust next.</p>
       </section>
       <section>
         <h2>Continuous tuning</h2>
@@ -57,14 +61,13 @@
         <p>Manual parameter controls and comparisons with the original audio complement the dialogue, letting users explore changes in tone and ambience through listening.</p>
       </section>
       <section>
-        <h2>Consistent parameter units</h2>
-        <p>Programmatic conversion maps the units used by the language model to the processors' internal values. Applied settings are converted back into the same units for inspection and subsequent edits.</p>
-        <p>This keeps requested changes, execution, and feedback connected to the actual effect-chain state.</p>
+        <h2>Execution and feedback</h2>
+        <p>A parameter-adaptation layer translates requested settings into the processors' internal values and returns the applied settings to the conversation. Each follow-up edit starts from the actual execution state.</p>
       </section>
       <section>
         <h2>Evaluation and validation</h2>
         <p>The project explored retrieval-based and language-model approaches, with internal demonstrations and small-scale prototype trials. Evaluation separates language understanding, parameter generation, and execution behavior.</p>
-        <p>Robustness checks, interface regression tests, and listening comparisons examine what the system understood, what it actually changed, and how the audio was affected.</p>
+        <p>Listening comparisons check whether the result matches the requested change, while interface regression tests check that the intended operations were executed.</p>
       </section>
     </main>
   </body>
