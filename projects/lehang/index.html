@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>臻品乐航 | Xinlu Liu</title>
+    <meta name="description" content="臻品乐航: an in-car music system that adapts stem-level audio effects to driving conditions, with reported application by QQ Music and ZEEKR on the ZEEKR 001.">
+    <style>
+      :root { color-scheme: light; --text: #1f2933; --muted: #5f6b7a; --line: #d8dee8; --link: #1b5fa7; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #fff; color: var(--text); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      main { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 56px; }
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+      nav { margin-bottom: 30px; font-size: 15px; }
+      header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+      h1 { margin: 0 0 14px; font-size: 32px; line-height: 1.25; font-weight: 650; letter-spacing: 0; }
+      h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.3; font-weight: 620; letter-spacing: 0; }
+      p { margin: 0 0 14px; }
+      header p, figcaption { color: var(--muted); }
+      .status { color: var(--text); font-size: 15px; }
+      header p:last-child, section p:last-child { margin-bottom: 0; }
+      figure { margin: 28px 0 0; }
+      figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+      figcaption { margin-top: 8px; font-size: 14px; }
+      section { padding: 28px 0; border-bottom: 1px solid var(--line); }
+      section:last-child { border-bottom: 0; }
+      @media (max-width: 640px) {
+        main { width: calc(100% - 28px); padding-top: 28px; }
+        h1 { font-size: 27px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Project navigation"><a href="../../index.html#projects">&larr; All projects</a></nav>
+      <header>
+        <h1 lang="zh-CN">臻品乐航</h1>
+        <p>An in-car music system that adapts stem-level audio effects to driving conditions.</p>
+        <p class="status">Publicly reported in-car product deployment</p>
+      </header>
+      <figure>
+        <a href="../../assets/lehang-method.png" target="_blank" rel="noopener" aria-label="Open full-size driving-state mapping diagram">
+          <img src="../../assets/lehang-method.png" width="2126" height="844" alt="Speed, steering, braking, and acceleration feed mapping functions that update gain, EQ, panning, and reverb controls on music stems.">
+        </a>
+        <figcaption>Driving-state information is mapped to audio effect controls on individual music stems.</figcaption>
+      </figure>
+      <section>
+        <h2>Driving-state control</h2>
+        <p>The system connects music playback to the driving context. It uses driving-state information and music stems as inputs, translating changes in vehicle state into audio-processing controls.</p>
+        <p>The method diagram illustrates the relationship between vehicle signals, mapping functions, and effect parameters. As the driving conditions change, the music processing responds.</p>
+      </section>
+      <section>
+        <h2>Stem-level audio effects</h2>
+        <p>Effects are controlled on individual music stems, allowing different parts of the music to respond to the driving state. The illustrated controls include gain, equalization, panning, and reverberation.</p>
+        <p>This creates an interactive listening experience in which the music changes with the journey.</p>
+      </section>
+      <section>
+        <h2>Product application and media coverage</h2>
+        <p>Public reports describe the joint introduction of <span lang="zh-CN">臻品乐航</span> by QQ Music and ZEEKR on the ZEEKR 001. DoNews describes driving-state-dependent control of individual music stems in its coverage of TME's TechME technology week. <a href="https://www.donews.com/news/detail/4/6226612.html">DoNews, November 3, 2025</a>.</p>
+        <p>The feature also appears in Hangzhou.com's coverage of the updated ZEEKR 001 launch, which describes the sound field responding to vehicle dynamics. <a href="https://auto.hangzhou.com.cn/news/content/2025-10/12/content_9101035.html">Hangzhou.com, October 12, 2025</a>.</p>
+      </section>
+    </main>
+  </body>
+</html>
